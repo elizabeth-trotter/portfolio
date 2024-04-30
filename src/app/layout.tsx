@@ -18,9 +18,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {/* <Head>
-        <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
-      </Head> */}
       <Flowbite>
         <body className={inter.className}>
           {children}

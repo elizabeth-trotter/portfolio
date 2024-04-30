@@ -14,7 +14,7 @@ export default function NavbarComponent() {
         var adobeDCView = new AdobeDC.View({clientId: "bdb06914f3304a4096e0fe55e8c73bbd"});
         adobeDCView.previewFile({
           content:{location: {url: "/ElizabethsResume.pdf"}}, // Update this with the path to your PDF file
-          metaData:{fileName: "resume.pdf"}
+          metaData:{fileName: "ElizabethsResume.pdf"}
         }, {embedMode: "LIGHT_BOX"});
       };
 
