@@ -19,7 +19,7 @@ export default function Home() {
               <div className="flex gap-10">
                 <div>
                   <h1 className="text-4xl font-josefin-sans headerText">Hello! I&apos;m Elizabeth, a </h1>
-                  <TypewriterComponent />
+                  {/* <TypewriterComponent /> */}
                   <p className="pt-5 font-josefin-slab">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae nobis, nam quas, dolore numquam nisi libero aliquid obcaecati neque aperiam aut unde voluptatem animi odit necessitatibus iure. Illo, asperiores vel!</p>
                   <div className="pt-8 flex flex-col space-y-4 sm:flex-row sm:justify-start sm:space-y-0">
                     <a href="#" className="text-sm inline-flex justify-center items-center py-2 px-5 text-center text-white dark:text-black rounded-md bg-black dark:bg-white hover:bg-slate-600 dark:hover:bg-slate-200 focus:ring-4 focus:ring-gray-700 dark:focus:ring-gray-400">

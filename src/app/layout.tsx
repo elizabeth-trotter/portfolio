@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { DarkThemeToggle, Flowbite } from "flowbite-react";
+import { Flowbite } from "flowbite-react";
+import { Head } from "next/document";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,11 +18,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-        <Flowbite>
-      <body className={inter.className}>
+      {/* <Head>
+        <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+      </Head> */}
+      <Flowbite>
+        <body className={inter.className}>
           {children}
-      </body>
-        </Flowbite>
+        </body>
+      </Flowbite>
     </html>
   );
 }
