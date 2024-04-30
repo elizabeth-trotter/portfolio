@@ -2,3 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'JosefinSans';
+  src: url('./fonts/Josefin_Sans/JosefinSans-VariableFont_wght.ttf');
+}
+
+@font-face {
+  font-family: 'JosefinSlab';
+  src: url('./fonts/Josefin_Slab/JosefinSlab-VariableFont_wght.ttf');
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+.headerText {
+  line-height: 1.3;
+}
+
+.typeWriterText {
+  font-family: 'JosefinSans';
+  font-size: 2.25rem;
+  line-height: 1.2;
+}
+
+.typeWriterCursor {
+  font-size: 1.5rem;
+}
