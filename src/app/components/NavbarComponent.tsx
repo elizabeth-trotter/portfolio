@@ -7,6 +7,8 @@ import { DarkThemeToggle, Flowbite } from "flowbite-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCloudArrowDown, faFileDownload, faFilePdf } from "@fortawesome/free-solid-svg-icons";
 
+declare const AdobeDC: any; // Declare AdobeDC as any type
+
 export default function NavbarComponent() {
 
     useEffect(() => {
