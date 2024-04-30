@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Navbar } from 'flowbite-react';
 import { DarkThemeToggle, Flowbite } from 'flowbite-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -7,6 +7,7 @@ import { faCloudArrowDown } from '@fortawesome/free-solid-svg-icons';
 declare const AdobeDC: any;
 
 export default function NavbarComponent() {
+
   useEffect(() => {
     // Initialize Adobe DC View SDK when it's ready
     document.addEventListener('adobe_dc_view_sdk.ready', function() {
