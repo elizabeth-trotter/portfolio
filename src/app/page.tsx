@@ -18,7 +18,7 @@ export default function Home() {
             <div id="about" className="pt-12 pb-20 text-gray-900 dark:text-white">
               <div className="flex gap-10">
                 <div>
-                  <h1 className="text-4xl font-josefin-sans headerText">Hello! I'm Elizabeth, a </h1>
+                  <h1 className="text-4xl font-josefin-sans headerText">Hello! I&apos;m Elizabeth, a </h1>
                   <TypewriterComponent />
                   <p className="pt-5 font-josefin-slab">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae nobis, nam quas, dolore numquam nisi libero aliquid obcaecati neque aperiam aut unde voluptatem animi odit necessitatibus iure. Illo, asperiores vel!</p>
                   <div className="pt-8 flex flex-col space-y-4 sm:flex-row sm:justify-start sm:space-y-0">
