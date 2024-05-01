@@ -11,7 +11,7 @@ const TypewriterComponent = () => {
                 cursorClassName: 'typeWriterCursor'
             }}
             onInit={(typewriter) => {
-                typewriter.typeString('a developer based in California.')
+                typewriter.typeString('- a developer based in California.')
                     .pauseFor(2500)
                     // .deleteAll()
                     .start();
