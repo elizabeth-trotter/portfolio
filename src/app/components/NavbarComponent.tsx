@@ -20,7 +20,7 @@ declare const AdobeDC: any;
 const customNavbarTheme: CustomFlowbiteTheme["navbar"] = {
   "collapse": {
     "base": "w-full 3xs:block 3xs:w-auto",
-    "list": "mt-4 flex flex-col 3xs:mt-0 3xs:flex-row 3xs:space-x-8 3xs:text-sm 3xs:font-medium",
+    "list": "mt-4 flex flex-col 3xs:mt-0 3xs:flex-row space-x-6 sm:space-x-8 md:text-sm 3xs:font-medium",
     "hidden": {
       "on": "hidden",
       "off": ""
@@ -76,7 +76,7 @@ export default function NavbarComponent(props: {isDarkMode: boolean}) {
 
   return (
     <Flowbite>
-      <Navbar theme={customNavbarTheme} fluid rounded className="bg-[#faf0e6] dark:bg-gray-900 font-josefin-sans">
+      <Navbar theme={customNavbarTheme} fluid rounded className="bg-[#faf0e6] dark:bg-gray-900 font-josefin-sans pt-5">
         <Navbar.Toggle />
         <Navbar.Collapse className="w-full md:block md:w-auto">
           <Navbar.Link href="#about" active>
@@ -85,13 +85,13 @@ export default function NavbarComponent(props: {isDarkMode: boolean}) {
           <Navbar.Link href="#skills">Skills</Navbar.Link>
           <Navbar.Link href="#projects">Projects</Navbar.Link>
           <Dropdown label="" dismissOnClick={false} renderTrigger={() => <span className='inline cursor-pointer text-gray-700 dark:text-gray-400 dark:hover:text-white md:hover:bg-transparent md:hover:text-cyan-700 md:dark:hover:bg-transparent md:dark:hover:text-white'>Connect<BiSolidDownArrow className='inline ps-1 pb-1 w-3' /></span>}>
-            <Dropdown.Item as={Link} href="mailto:elizabeth.dev.inquiry@gmail.com" target='_blank'>Email<span className='ps-[2.85rem]'><MdOutlineAlternateEmail /></span></Dropdown.Item>
+            <Dropdown.Item as={Link} href="mailto:elizabeth.dev.inquiry@gmail.com" target='_blank'><span className="ps-[0.1rem]"><MdOutlineAlternateEmail /></span><span className="ps-4 pt-1">Email</span></Dropdown.Item>
             {/* <FontAwesomeIcon icon={faEnvelope} className='ps-2 pb-1 h-3' /> */}
             {/* <Dropdown.Item as={Link} href="#" target='_blank'>Resume <FontAwesomeIcon icon={faCloudArrowDown} className='ps-2 pb-1 h-3' /></Dropdown.Item> */}
             {/* <DropdownDivider /> */}
-            <Dropdown.Item as={Link} href="https://github.com/et120" target='_blank'>GitHub<span className='ps-9'><BsGithub /></span></Dropdown.Item>
-            <Dropdown.Item as={Link} href="https://www.linkedin.com/in/elizabeth-trotter" target='_blank'>LinkedIn<span className='ps-7'><FaLinkedinIn /></span></Dropdown.Item>
-            <Dropdown.Item as={Link} href="https://www.codewars.com/users/et120" target='_blank'>Codewars<span className='ps-5'><Image src={props.isDarkMode ? CodewarsLight : CodewarsDark} alt={"Codewars logo"} className="h-4 w-4" /></span></Dropdown.Item>
+            <Dropdown.Item as={Link} href="https://github.com/et120" target='_blank'><span className="ps-[0.1rem]"><BsGithub /></span><span className="ps-4 pt-1">GitHub</span></Dropdown.Item>
+            <Dropdown.Item as={Link} href="https://www.linkedin.com/in/elizabeth-trotter" target='_blank'><span className="ps-[0.1rem]"><FaLinkedinIn /></span><span className="ps-4 pt-1">LinkedIn</span></Dropdown.Item>
+            <Dropdown.Item as={Link} href="https://www.codewars.com/users/et120" target='_blank'><span><Image src={props.isDarkMode ? CodewarsLight : CodewarsDark} alt={"Codewars logo"} className="h-4 w-4" /></span><span className="ps-[.85rem] pt-1">Codewars</span></Dropdown.Item>
             {/* <FontAwesomeIcon icon={faExternalLink} className='ps-2 pb-1 h-3' /> */}
           </Dropdown>
           {/* <Navbar.Link href="#projects">GitHub</Navbar.Link>
@@ -106,7 +106,7 @@ export default function NavbarComponent(props: {isDarkMode: boolean}) {
             </span>
           </Navbar.Link> */}
         </Navbar.Collapse>
-        <DarkThemeToggle />
+        <DarkThemeToggle className="-mt-1"/>
       </Navbar>
     </Flowbite>
   );
