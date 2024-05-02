@@ -14,6 +14,11 @@ const config: Config = {
         'josefin-sans': ['JosefinSans', 'sans-serif'],
         'josefin-slab': ['JosefinSlab', 'serif']
       },
+      screens: {
+        'xs': '575px',
+        '2xs': '480px',
+        '3xs': '400px'
+      }
     },
   },
   plugins: [

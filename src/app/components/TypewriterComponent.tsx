@@ -1,9 +1,19 @@
 'use client';
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Typewriter from 'typewriter-effect';
 
 const TypewriterComponent = () => {
+    // const [showCursor, setShowCursor] = useState(true);
+
+    // useEffect(() => {
+    //   // Hide cursor after 5 seconds
+    //   const timer = setTimeout(() => {
+    //     setShowCursor(false);
+    //   }, 5000);
+    //   return () => clearTimeout(timer);
+    // }, []);
+    
     return (
         <Typewriter
             options={{
