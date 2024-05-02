@@ -42,7 +42,7 @@
 }
 
 .blinking {
-  animation: blink 1.5s 18s infinite; /* Add the blinking animation */
+  animation: blink 1.5s 15s infinite; /* Add the blinking animation */
 }
 
 @keyframes blink {
