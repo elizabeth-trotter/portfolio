@@ -14,6 +14,7 @@ import { BsLinkedin, BsFacebook, BsGithub, BsInstagram, BsTwitter } from "react-
 import Link from "next/link";
 import CodewarsDark from '@/app/assets/codewarslogodark.png';
 import CodewarsLight from '@/app/assets/codewarslogolight.png';
+import { NavbarDrawerComponent } from "./NavbarDrawerComponent";
 
 declare const AdobeDC: any;
 
@@ -43,7 +44,9 @@ const customNavbarTheme: CustomFlowbiteTheme["navbar"] = {
   }
 };
 
-export default function NavbarComponent(props: {isDarkMode: boolean}) {
+export default function NavbarComponent(props: { isDarkMode: boolean }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const handleClose = () => setIsOpen(false);
 
   useEffect(() => {
     // Initialize Adobe DC View SDK when it's ready
@@ -77,15 +80,15 @@ export default function NavbarComponent(props: {isDarkMode: boolean}) {
   return (
     <Flowbite>
       <Navbar theme={customNavbarTheme} fluid rounded className="bg-[#faf0e6] dark:bg-gray-900 font-josefin-sans pt-5">
-        <Navbar.Toggle />
-        <Navbar.Collapse className="w-full md:block md:w-auto">
+        <Navbar.Toggle onClick={() => setIsOpen(true)} />
+        <Navbar.Collapse className="w-full md:block md:w-auto max-[400px]:hidden">
           <Navbar.Link href="#about" active>
             About
           </Navbar.Link>
           <Navbar.Link href="#skills">Skills</Navbar.Link>
           <Navbar.Link href="#projects">Projects</Navbar.Link>
           <Dropdown label="" dismissOnClick={false} renderTrigger={() => <span className='inline cursor-pointer text-gray-700 dark:text-gray-400 dark:hover:text-white md:hover:bg-transparent md:hover:text-cyan-700 md:dark:hover:bg-transparent md:dark:hover:text-white'>Connect<BiSolidDownArrow className='inline ps-1 pb-1 w-3' /></span>}>
-            <Dropdown.Item as={Link} href="mailto:elizabeth.dev.inquiry@gmail.com" target='_blank'><span className="ps-[0.1rem]"><MdOutlineAlternateEmail /></span><span className="ps-4 pt-1">Email</span></Dropdown.Item>
+            <Dropdown.Item as={Link} href="mailto:elizabeth.dev.inquiry@gmail.com" ><span className="ps-[0.1rem]"><MdOutlineAlternateEmail /></span><span className="ps-4 pt-1">Email</span></Dropdown.Item>
             {/* <FontAwesomeIcon icon={faEnvelope} className='ps-2 pb-1 h-3' /> */}
             {/* <Dropdown.Item as={Link} href="#" target='_blank'>Resume <FontAwesomeIcon icon={faCloudArrowDown} className='ps-2 pb-1 h-3' /></Dropdown.Item> */}
             {/* <DropdownDivider /> */}
@@ -106,8 +109,11 @@ export default function NavbarComponent(props: {isDarkMode: boolean}) {
             </span>
           </Navbar.Link> */}
         </Navbar.Collapse>
-        <DarkThemeToggle className="-mt-1"/>
+        <DarkThemeToggle className="-mt-1" />
       </Navbar>
+
+      <NavbarDrawerComponent isDarkMode={props.isDarkMode} isOpen={isOpen} handleClose={handleClose} />
+
     </Flowbite>
   );
 }

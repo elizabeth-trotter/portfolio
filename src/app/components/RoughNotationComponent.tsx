@@ -29,7 +29,7 @@ const RoughNotationComponent = (props: {isDarkMode: boolean}) => {
                     <span style={{ whiteSpace: 'nowrap' }}>technologies</span>
                 </RoughNotation>
 
-                <p className="inline"> to build pixel-perfect </p>
+                <p className="inline"> to build pixel perfect </p>
 
                 <RoughNotation animationDelay={6000} type="underline" color={`${props.isDarkMode ? 'lightgrey' : 'red'}`} order="4">
                     <span style={{ whiteSpace: 'nowrap' }}>web </span>

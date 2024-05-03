@@ -26,7 +26,7 @@ const FooterComponent = (props: { isDarkMode: boolean }) => {
                         <p>2024 <Link className='hover:underline cursor-pointer' href={'#home'}>Elizabeth Trotter</Link></p>
                     </div>
                     <div className="mt-4 flex space-x-6 xs:mt-0 xs:justify-center items-center">
-                        <Footer.Icon href="mailto:elizabeth.dev.inquiry@gmail.com" target='_blank' icon={MdOutlineAlternateEmail} />
+                        <Footer.Icon href="mailto:elizabeth.dev.inquiry@gmail.com" icon={MdOutlineAlternateEmail} />
                         <Footer.Icon href="https://github.com/et120" target='_blank' icon={BsGithub} />
                         <Footer.Icon href="https://www.linkedin.com/in/elizabeth-trotter" target='_blank' icon={FaLinkedinIn} />
                         {/* <Footer.Icon href="https://www.codewars.com/users/et120" icon={SiCodewars} /> */}

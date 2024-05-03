@@ -36,14 +36,14 @@ export default function Home() {
             <div id="about" className="pt-12 text-gray-900 dark:text-white">
               <div className="grid grid-cols-3 grid-rows-3">
 
-                <div className="-mt-5 3xs:mt-0 col-span-3 sm:col-span-2 sm:pe-7 text-center 2xs:text-start">
+                <div className="-mx-5 min-[340px]:mx-0 -mt-5 3xs:mt-0 col-span-3 sm:col-span-2 sm:pe-7 text-center 2xs:text-start">
                   <h1 className="text-3xl sm:text-4xl font-josefin-sans headerText">Hello! I&apos;m Elizabeth </h1>
                   <div className="sm:min-h-24">
                     <TypewriterComponent />
                   </div>
                 </div>
 
-                <div className="col-span-3 2xs:col-span-1 flex flex-col px-16 2xs:px-0 -mt-10 min-[391px]:-mt-12 min-[400px]:-mt-9 min-[413px]:-mt-10 min-[443px]:-mt-12 min-[450px]:-mt-14 2xs:-mt-2 min-[530px]:-mt-8 sm:mt-0 sm:items-end">
+                <div className="col-span-3 2xs:col-span-1 flex flex-col px-10 min-[340px]:px-16 2xs:px-0 -mt-14 min-[316px]:-mt-12 min-[325px]:-mt-14 min-[340px]:-mt-12 min-[345px]:-mt-10 min-[370px]:-mt-12 min-[387px]:-mt-10 min-[391px]:-mt-12 min-[400px]:-mt-9 min-[413px]:-mt-10 min-[443px]:-mt-12 min-[450px]:-mt-14 2xs:-mt-2 min-[530px]:-mt-8 sm:mt-0 sm:items-end">
                   <Image src={photo} alt="profile photo" className={`sm:me-3 border-2 border-white rounded-full aspect-w-1 aspect-h-1 sm:h-44 sm:w-44`} />
 
                   <div className="hidden 2xs:flex flex-row-reverse justify-end sm:flex-row gap-2">
@@ -56,7 +56,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="text-justify 2xs:text-start col-span-3 2xs:col-span-2 min-[400px]:mt-4 min-[418px]:mt-6 min-[428px]:mt-7 2xs:-mt-6 2xs:ps-7 sm:ps-0 sm:-mt-10">
+                <div className="text-justify 2xs:text-start col-span-3 2xs:col-span-2 -mt-14 min-[316px]:-mt-10 min-[325px]:-mt-8 min-[340px]:-mt-12 min-[345px]:-mt-7 min-[360px]:-mt-6 min-[370px]:-mt-4 min-[387px]:mt-0 min-[400px]:mt-4 min-[418px]:mt-6 min-[428px]:mt-7 2xs:-mt-6 2xs:ps-7 sm:ps-0 sm:-mt-10">
                   <RoughNotationComponent isDarkMode={isDarkMode} />
                 </div>
 
