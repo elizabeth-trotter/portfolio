@@ -1,17 +1,13 @@
 'use client';
 
+// External imports
 import Image from "next/image";
-import { useEffect, useState } from 'react';
-import { Dropdown, Navbar } from 'flowbite-react';
-import { DarkThemeToggle, Flowbite } from 'flowbite-react';
-import { MdOutlineAlternateEmail } from "react-icons/md";
-import { BiSolidDownArrow } from "react-icons/bi";
-import { SiCodewars } from "react-icons/si";
-import { FaLinkedinIn } from "react-icons/fa";
-import { BsGithub } from "react-icons/bs";
 import Link from "next/link";
-import CodewarsDark from '@/app/assets/images/codewarslogodark.png';
-import CodewarsLight from '@/app/assets/images/codewarslogolight.png';
+import { useState } from 'react';
+import { Dropdown, Navbar, DarkThemeToggle } from 'flowbite-react';
+
+// Internal imports
+import { MdOutlineAlternateEmail, BiSolidDownArrow, SiCodewars, FaLinkedinIn, BsGithub, CodewarsDark, CodewarsLight } from "@/app/icons";
 import { NavbarDrawerComponent } from "./NavbarDrawerComponent";
 import { customNavbarTheme } from "../../styles/themes/CustomNavbarTheme";
 
@@ -31,17 +27,12 @@ export default function NavbarComponent(props: { isDarkMode: boolean }) {
           <Navbar.Link href="#projects">Projects</Navbar.Link>
           <Dropdown label="" dismissOnClick={false} renderTrigger={() => <span className='inline cursor-pointer text-gray-700 dark:text-gray-400 dark:hover:text-white md:hover:bg-transparent md:hover:text-cyan-700 md:dark:hover:bg-transparent md:dark:hover:text-white'>Connect<BiSolidDownArrow className='inline ps-1 pb-1 w-3' /></span>}>
             <Dropdown.Item as={Link} href="mailto:elizabeth.dev.inquiry@gmail.com" ><span className="ps-[0.1rem]"><MdOutlineAlternateEmail /></span><span className="ps-4 pt-1">Email</span></Dropdown.Item>
-            {/* <FontAwesomeIcon icon={faEnvelope} className='ps-2 pb-1 h-3' /> */}
             {/* <Dropdown.Item as={Link} href="#" target='_blank'>Resume <FontAwesomeIcon icon={faCloudArrowDown} className='ps-2 pb-1 h-3' /></Dropdown.Item> */}
             {/* <DropdownDivider /> */}
             <Dropdown.Item as={Link} href="https://github.com/et120" target='_blank'><span className="ps-[0.1rem]"><BsGithub /></span><span className="ps-4 pt-1">GitHub</span></Dropdown.Item>
             <Dropdown.Item as={Link} href="https://www.linkedin.com/in/elizabeth-trotter" target='_blank'><span className="ps-[0.1rem]"><FaLinkedinIn /></span><span className="ps-4 pt-1">LinkedIn</span></Dropdown.Item>
             <Dropdown.Item as={Link} href="https://www.codewars.com/users/et120" target='_blank'><span><Image src={props.isDarkMode ? CodewarsLight : CodewarsDark} alt={"Codewars logo"} className="h-4 w-4" /></span><span className="ps-[.85rem] pt-1">Codewars</span></Dropdown.Item>
-            {/* <FontAwesomeIcon icon={faExternalLink} className='ps-2 pb-1 h-3' /> */}
           </Dropdown>
-          {/* <Navbar.Link href="#projects">GitHub</Navbar.Link>
-          <Navbar.Link href="#skills">LinkedIn</Navbar.Link> */}
-
 
           {/* <Navbar.Link href="#contact">Contact</Navbar.Link> */}
           {/* <Navbar.Link id="resume-link">

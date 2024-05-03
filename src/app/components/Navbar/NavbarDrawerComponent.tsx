@@ -1,11 +1,10 @@
 'use client';
 
-import { Drawer, Flowbite, Sidebar } from "flowbite-react";
-import { HiClipboard, HiCollection, HiUsers, HiOutlineExternalLink } from "react-icons/hi";
-import { FaLinkedinIn } from "react-icons/fa";
-import { BsGithub } from "react-icons/bs";
-import { MdOutlineAlternateEmail } from "react-icons/md";
-import { SiCodewars } from "react-icons/si";
+// External imports
+import { Drawer, Sidebar } from "flowbite-react";
+
+// Internal imports
+import { HiClipboard, HiCollection, HiUsers, HiOutlineExternalLink, FaLinkedinIn, BsGithub, MdOutlineAlternateEmail, SiCodewars } from "@/app/icons";
 import { customDrawerTheme } from "../../styles/themes/CustomDrawerTheme";
 
 export function NavbarDrawerComponent(props: { isDarkMode: boolean, isOpen: boolean, handleClose: () => void }) {

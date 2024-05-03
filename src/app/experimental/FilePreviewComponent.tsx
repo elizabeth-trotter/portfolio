@@ -1,3 +1,5 @@
+// *Experimental Only* - Attemps at integrating Adobe File Preview API
+
 import React, { useEffect } from 'react';
 
 declare const AdobeDC: any;

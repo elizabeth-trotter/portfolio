@@ -1,16 +1,20 @@
 'use client';
 
+// External imports
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Card, Flowbite, useThemeMode } from "flowbite-react";
-import NavbarComponent from "./components/Navbar/NavbarComponent";
-import FooterComponent from "./components/Footer/FooterComponent";
-import TypewriterComponent from "./components/DynamicText/TypewriterComponent";
-import RoughNotationComponent from "./components/DynamicText/RoughNotationComponent";
+import { Flowbite, useThemeMode } from "flowbite-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesDown } from "@fortawesome/free-solid-svg-icons";
 import { faGithubSquare, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import Link from "next/link";
+
+// Internal imports
+import NavbarComponent from "./components/Navbar/NavbarComponent";
+import FooterComponent from "./components/Footer/FooterComponent";
+import TypewriterComponent from "./components/HeaderSection/TypewriterComponent";
+import RoughNotationComponent from "./components/HeaderSection/RoughNotationComponent";
+import ProjectCardComponent from "./components/ProjectsSection/ProjectCardComponent";
 import ProfilePhoto from '@/app/assets/images/profile.png';
 import ProfileLightPhoto from '@/app/assets/images/profilelight.png';
 
@@ -85,30 +89,9 @@ export default function Home() {
             <section id="projects" className="font-josefin-sans text-md text-gray-900 dark:text-white">
               <h1 className="border-b pb-2 mb-10">PROJECTS</h1>
               <div className="flex flex-col items-center gap-5">
-                <Card className="max-w-sm" imgSrc="/images/blog/image-4.jpg" horizontal>
-                  <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    Noteworthy technology acquisitions 2021
-                  </h5>
-                  <p className="font-normal text-gray-700 dark:text-gray-400">
-                    Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
-                  </p>
-                </Card>
-                <Card className="max-w-sm" imgSrc="/images/blog/image-4.jpg" horizontal>
-                  <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    Noteworthy technology acquisitions 2021
-                  </h5>
-                  <p className="font-normal text-gray-700 dark:text-gray-400">
-                    Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
-                  </p>
-                </Card>
-                <Card className="max-w-sm" imgSrc="/images/blog/image-4.jpg" horizontal>
-                  <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    Noteworthy technology acquisitions 2021
-                  </h5>
-                  <p className="font-normal text-gray-700 dark:text-gray-400">
-                    Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
-                  </p>
-                </Card>
+                <ProjectCardComponent />
+                <ProjectCardComponent />
+                <ProjectCardComponent />
               </div>
             </section>
 

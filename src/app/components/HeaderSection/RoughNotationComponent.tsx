@@ -1,7 +1,10 @@
 'use client';
 
+// External imports
 import React from 'react';
 import { RoughNotation, RoughNotationGroup } from 'react-rough-notation';
+
+// Internal imports
 import './DynamicText.css';
 
 const RoughNotationComponent = (props: {isDarkMode: boolean}) => {

@@ -1,7 +1,10 @@
 'use client';
 
+// External imports
 import React from 'react';
 import Typewriter from 'typewriter-effect';
+
+// Internal imports
 import './DynamicText.css';
 
 const TypewriterComponent = () => {
