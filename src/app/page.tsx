@@ -17,6 +17,7 @@ import RoughNotationComponent from "./components/HeaderSection/RoughNotationComp
 import ProjectCardComponent from "./components/ProjectsSection/ProjectCardComponent";
 import ProfilePhoto from '@/app/assets/images/profile.png';
 import ProfileLightPhoto from '@/app/assets/images/profilelight.png';
+import { BiLogoTypescript, IoLogoCss3, IoLogoHtml5, IoLogoJavascript, IoLogoPython, RiJavascriptFill, SiCsharp, TbFileTypeSql, TbSql } from "./icons";
 
 export default function Home() {
   const { mode } = useThemeMode();
@@ -82,8 +83,21 @@ export default function Home() {
               </div>
             </section>
 
-            <section id="skills" className="mt-16 sm:-mt-32 h-72 font-josefin-sans text-md text-gray-900 dark:text-white">
-              <h1 className="border-b pb-2 mb-10">SKILLS</h1>
+            <section id="skills" className="mt-16 sm:-mt-32 h-72 text-md text-gray-900 dark:text-white">
+              <h1 className="font-josefin-sans border-b pb-2 mb-10">Skills</h1>
+              <section className="bg-white dark:bg-gray-800 rounded p-8 border dark:border-gray-700">
+                <h3 className=" font-josefin-sans text-lg pb-5">Languages</h3>
+                <div className="flex justify-evenly">
+                  <IoLogoJavascript className="h-10 w-10 text-[#f7df1e] dark:text-white" />
+                  <BiLogoTypescript className="h-10 w-10 text-[#007acc] dark:text-white" />
+                  <SiCsharp className="h-10 w-10 text-[#682876] dark:text-white" />
+                  <IoLogoHtml5 className="h-10 w-10 text-[#e34c26] dark:text-white" />
+                  <IoLogoCss3 className="h-10 w-10 text-[#264de4] dark:text-white" />
+                  {/* <TbSql className="h-10 w-10" /> */}
+                  <TbFileTypeSql className="h-10 w-10" />
+                  <IoLogoPython className="h-10 w-10 text-[#4584b6] dark:text-white" />
+                </div>
+              </section>
             </section>
 
             <section id="projects" className="font-josefin-sans text-md text-gray-900 dark:text-white">
