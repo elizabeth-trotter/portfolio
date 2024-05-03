@@ -1,7 +1,8 @@
 'use client';
 
-import React from 'react'
-import { RoughNotation, RoughNotationGroup } from 'react-rough-notation'
+import React from 'react';
+import { RoughNotation, RoughNotationGroup } from 'react-rough-notation';
+import './DynamicText.css';
 
 const RoughNotationComponent = (props: {isDarkMode: boolean}) => {
     
@@ -50,4 +51,4 @@ const RoughNotationComponent = (props: {isDarkMode: boolean}) => {
     )
 }
 
-export default RoughNotationComponent
+export default RoughNotationComponent;

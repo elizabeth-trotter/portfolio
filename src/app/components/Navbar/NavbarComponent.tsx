@@ -1,84 +1,26 @@
 'use client';
+
 import Image from "next/image";
 import { useEffect, useState } from 'react';
-import { CustomFlowbiteTheme, Dropdown, DropdownDivider, Navbar } from 'flowbite-react';
+import { Dropdown, Navbar } from 'flowbite-react';
 import { DarkThemeToggle, Flowbite } from 'flowbite-react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCloudArrowDown, faDiagramProject, faEnvelope, faExternalLink, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import { MdOutlineAlternateEmail } from "react-icons/md";
 import { BiSolidDownArrow } from "react-icons/bi";
-import { faGithubSquare, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { SiCodewars } from "react-icons/si";
 import { FaLinkedinIn } from "react-icons/fa";
-import { BsLinkedin, BsFacebook, BsGithub, BsInstagram, BsTwitter } from "react-icons/bs";
+import { BsGithub } from "react-icons/bs";
 import Link from "next/link";
-import CodewarsDark from '@/app/assets/codewarslogodark.png';
-import CodewarsLight from '@/app/assets/codewarslogolight.png';
+import CodewarsDark from '@/app/assets/images/codewarslogodark.png';
+import CodewarsLight from '@/app/assets/images/codewarslogolight.png';
 import { NavbarDrawerComponent } from "./NavbarDrawerComponent";
-
-declare const AdobeDC: any;
-
-const customNavbarTheme: CustomFlowbiteTheme["navbar"] = {
-  "collapse": {
-    "base": "w-full 3xs:block 3xs:w-auto",
-    "list": "mt-4 flex flex-col 3xs:mt-0 3xs:flex-row space-x-6 sm:space-x-8 md:text-sm 3xs:font-medium",
-    "hidden": {
-      "on": "hidden",
-      "off": ""
-    }
-  },
-  "link": {
-    "base": "block py-2 pl-3 pr-4 3xs:p-0",
-    "active": {
-      "on": "bg-cyan-700 text-white dark:text-white 3xs:bg-transparent 3xs:text-cyan-700",
-      "off": "border-b border-gray-100 text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white 3xs:border-0 3xs:hover:bg-transparent 3xs:hover:text-cyan-700 3xs:dark:hover:bg-transparent 3xs:dark:hover:text-white"
-    },
-    "disabled": {
-      "on": "text-gray-400 hover:cursor-not-allowed dark:text-gray-600",
-      "off": ""
-    }
-  },
-  "toggle": {
-    "base": "inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 3xs:hidden",
-    "icon": "h-6 w-6 shrink-0"
-  }
-};
+import { customNavbarTheme } from "../../styles/themes/CustomNavbarTheme";
 
 export default function NavbarComponent(props: { isDarkMode: boolean }) {
   const [isOpen, setIsOpen] = useState(false);
   const handleClose = () => setIsOpen(false);
 
-  useEffect(() => {
-    // Initialize Adobe DC View SDK when it's ready
-    document.addEventListener('adobe_dc_view_sdk.ready', function () {
-      const handleResumePreview = () => {
-        var adobeDCView = new AdobeDC.View({
-          clientId: 'bdb06914f3304a4096e0fe55e8c73bbd'
-        });
-        adobeDCView.previewFile(
-          {
-            content: {
-              location: { url: '/ElizabethsResume.pdf' } // Update with your PDF file path
-            },
-            metaData: { fileName: 'ElizabethsResume.pdf' }
-          },
-          { embedMode: 'LIGHT_BOX' }
-        );
-      };
-
-      // Add event listener to handle resume preview
-      const resumeLink = document.getElementById('resume-link');
-      resumeLink?.addEventListener('click', handleResumePreview);
-
-      // Clean up event listener on component unmount
-      return () => {
-        resumeLink?.removeEventListener('click', handleResumePreview);
-      };
-    });
-  }, []);
-
   return (
-    <Flowbite>
+    <>
       <Navbar theme={customNavbarTheme} fluid rounded className="bg-[#faf0e6] dark:bg-gray-900 font-josefin-sans pt-5">
         <Navbar.Toggle onClick={() => setIsOpen(true)} />
         <Navbar.Collapse className="w-full md:block md:w-auto max-[400px]:hidden">
@@ -113,7 +55,6 @@ export default function NavbarComponent(props: { isDarkMode: boolean }) {
       </Navbar>
 
       <NavbarDrawerComponent isDarkMode={props.isDarkMode} isOpen={isOpen} handleClose={handleClose} />
-
-    </Flowbite>
+    </>
   );
 }

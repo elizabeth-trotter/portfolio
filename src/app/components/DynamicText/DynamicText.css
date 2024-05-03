@@ -1,0 +1,35 @@
+.typeWriterText {
+    font-family: 'JosefinSans';
+    font-size: 2.25rem;
+    line-height: 1.3;
+}
+
+.typeWriterCursor {
+    font-size: 1.5rem;
+    animation: blink 1.0s 0s infinite;
+}
+
+@media screen and (max-width: 640px) {
+    .typeWriterText {
+        font-size: 1.875rem;
+        line-height: 2.75rem
+    }
+}
+
+.blinking {
+    animation: blink 1.5s 12s infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

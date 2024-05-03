@@ -1,7 +1,8 @@
 'use client';
 
-import React, { useEffect, useState } from 'react'
+import React from 'react';
 import Typewriter from 'typewriter-effect';
+import './DynamicText.css';
 
 const TypewriterComponent = () => {
     // const [showCursor, setShowCursor] = useState(true);
@@ -39,4 +40,4 @@ const TypewriterComponent = () => {
     )
 }
 
-export default TypewriterComponent
+export default TypewriterComponent;
