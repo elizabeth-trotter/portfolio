@@ -14,6 +14,15 @@ const config: Config = {
         'josefin-sans': ['JosefinSans', 'sans-serif'],
         'josefin-slab': ['JosefinSlab', 'serif']
       },
+      colors: {
+        javascriptYellow: '#f7df1e',
+        typescriptBlue: '#007acc',
+        csharpPurple: '#682876',
+        htmlRed: '#e34c26',
+        cssBlue: '#264de4',
+        sqlBlack: '#000000'
+        
+      },
       screens: {
         'xs': '575px',
         '2xs': '480px',
