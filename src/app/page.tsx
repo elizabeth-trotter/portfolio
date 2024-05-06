@@ -117,7 +117,7 @@ export default function Home() {
               </section>
 
               <section id="projects" className="font-josefin-sans text-md text-gray-900 dark:text-white">
-                <h1 className="border-b pb-2 mb-10">PROJECTS</h1>
+                <h1 className="text-2xl font-josefin-sans pb-8">Projects</h1>
                 <div className="flex flex-col items-center gap-5">
                   <ProjectCardComponent />
                   <ProjectCardComponent />

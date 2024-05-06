@@ -13,7 +13,7 @@ export default function LibraryComponent() {
             transition={{ duration: 1.5 }}
         >
             <div className="bg-white dark:bg-gray-800 rounded p-8 border dark:border-gray-700">
-                <h3 className=" font-josefin-sans text-lg pb-5 text-end">Frameworks & Libraries</h3>
+                <h3 className=" font-josefin-sans text-lg pb-5 text-start">Frameworks & Libraries</h3>
                 <div className="grid grid-rows-2 grid-cols-3 gap-y-5">
                     <SkillsCardComponent icon={SiDotnet} title=".NET" />
                     <SkillsCardComponent icon={IoLogoReact} title="React" />
