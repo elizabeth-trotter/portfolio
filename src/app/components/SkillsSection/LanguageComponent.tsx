@@ -9,12 +9,12 @@ export default function LanguageComponent() {
         <div className="bg-white dark:bg-gray-800 rounded p-8 border dark:border-gray-700">
             <h3 className=" font-josefin-sans text-lg pb-5 text-start">Programming Languages</h3>
             <div className="grid grid-rows-2 grid-cols-3 gap-y-5">
-                <SkillsCardComponent icon={RiJavascriptFill} language="JavaScript" color='javascriptYellow' />
-                <SkillsCardComponent icon={BiLogoTypescript} language="TypeScript" color='typescriptBlue' />
-                <SkillsCardComponent icon={SiCsharp} language="C#" color='csharpPurple' />
-                <SkillsCardComponent icon={IoLogoHtml5} language="HTML" color='htmlRed' />
-                <SkillsCardComponent icon={IoLogoCss3} language="CSS" color='cssBlue' />
-                <SkillsCardComponent icon={TbSql} language="SQL" color='sqlBlack' />
+                <SkillsCardComponent icon={RiJavascriptFill} title="JavaScript" />
+                <SkillsCardComponent icon={BiLogoTypescript} title="TypeScript" />
+                <SkillsCardComponent icon={SiCsharp} title="C#" />
+                <SkillsCardComponent icon={IoLogoHtml5} title="HTML" />
+                <SkillsCardComponent icon={IoLogoCss3} title="CSS" />
+                <SkillsCardComponent icon={TbSql} title="SQL" />
             </div>
         </div>
     )
