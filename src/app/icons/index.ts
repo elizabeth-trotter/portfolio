@@ -28,6 +28,7 @@ export { TbFileTypeSql } from "react-icons/tb";
 export { IoLogoPython } from "react-icons/io5";
 
 export { IoLogoJavascript } from "react-icons/io5";
+export { SiTypescript } from "react-icons/si";
 
 // Frameworks/Librarires
 export { SiDotnet } from "react-icons/si";

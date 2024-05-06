@@ -20,8 +20,19 @@ const config: Config = {
         csharpPurple: '#682876',
         htmlRed: '#e34c26',
         cssBlue: '#264de4',
-        sqlBlack: '#000000'
-        
+        sqlBlack: '#000000',
+        dotnetBlue: '#512bd4',
+        reactBlue: '#61DBFB',
+        nextjsPurple: '#682876',
+        angularRed: '#e34c26',
+        bootstrapIndigo: '#264de4',
+        tailwindBlack: '#000000',
+        azureBlue: '#007fff',
+        vscodeBlue: '#007acc',
+        figmaPink: '#f24e1e',
+        postmanOrange: '#ff6c37',
+        jiraGreen: '#0052cc',
+        gitBlack: '#000000'
       },
       screens: {
         'xs': '575px',
