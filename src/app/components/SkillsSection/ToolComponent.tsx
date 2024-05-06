@@ -8,7 +8,7 @@ import { SiMicrosoftazure, SiVisualstudio, FiFigma, SiPostman, SiJirasoftware, F
 export default function ToolComponent() {
     return (
         <motion.div
-            initial={{ opacity: -0, x: -1000 }}
+            initial={{ opacity: -0, x: '-50%' }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.5 }}
         >
