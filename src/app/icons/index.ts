@@ -46,3 +46,7 @@ export { FiFigma } from "react-icons/fi";
 export { SiPostman } from "react-icons/si";
 export { SiJirasoftware } from "react-icons/si";
 export { FaGitAlt } from "react-icons/fa";
+
+// Header Styling
+export { FaLessThan } from "react-icons/fa6";
+export { FaGreaterThan } from "react-icons/fa6";

@@ -17,7 +17,11 @@ import RoughNotationComponent from "./components/HeaderSection/RoughNotationComp
 import ProjectCardComponent from "./components/ProjectsSection/ProjectCardComponent";
 import ProfilePhoto from '@/app/assets/images/profile.png';
 import ProfileLightPhoto from '@/app/assets/images/profilelight.png';
-import { BiLogoTypescript, IoLogoCss3, IoLogoHtml5, IoLogoJavascript, IoLogoPython, RiJavascriptFill, SiCsharp, TbFileTypeSql, TbSql } from "./icons";
+import { BiLogoTypescript, FaGreaterThan, FaLessThan, IoLogoCss3, IoLogoHtml5, IoLogoJavascript, IoLogoPython, RiJavascriptFill, SiCsharp, TbFileTypeSql, TbSql } from "./icons";
+import SkillsCardComponent from "./components/SkillsSection/SkillsCardComponent";
+import LanguageComponent from "./components/SkillsSection/LanguageComponent";
+import LibraryComponent from "./components/SkillsSection/LibraryComponent";
+import ToolComponent from "./components/SkillsSection/ToolComponent";
 
 export default function Home() {
   const { mode } = useThemeMode();
@@ -83,21 +87,20 @@ export default function Home() {
               </div>
             </section>
 
-            <section id="skills" className="mt-16 sm:-mt-32 h-72 text-md text-gray-900 dark:text-white">
-              <h1 className="font-josefin-sans border-b pb-2 mb-10">Skills</h1>
-              <section className="bg-white dark:bg-gray-800 rounded p-8 border dark:border-gray-700">
-                <h3 className=" font-josefin-sans text-lg pb-5">Languages</h3>
-                <div className="flex justify-evenly">
-                  <IoLogoJavascript className="h-10 w-10 text-[#f7df1e] dark:text-white" />
-                  <BiLogoTypescript className="h-10 w-10 text-[#007acc] dark:text-white" />
-                  <SiCsharp className="h-10 w-10 text-[#682876] dark:text-white" />
-                  <IoLogoHtml5 className="h-10 w-10 text-[#e34c26] dark:text-white" />
-                  <IoLogoCss3 className="h-10 w-10 text-[#264de4] dark:text-white" />
-                  {/* <TbSql className="h-10 w-10" /> */}
-                  <TbFileTypeSql className="h-10 w-10" />
-                  <IoLogoPython className="h-10 w-10 text-[#4584b6] dark:text-white" />
-                </div>
+            <section id="skills" className="my-16 sm:-mt-44 text-md text-gray-900 dark:text-white">
+              <div className="border-t pb-14 border-gray-300 dark:border-gray-600"></div>
+              <div className="flex items-baseline">
+                <FaLessThan className="text-gray-600 dark:text-gray-300" />
+                <h1 className="text-2xl font-josefin-sans pb-8 px-1">Skills <span className="text-gray-600 dark:text-gray-300">/</span></h1>
+                <FaGreaterThan className="text-gray-600 dark:text-gray-300" />
+              </div>
+              <section className="grid grid-cols-1 grid-rows-3 gap-2">
+                <LanguageComponent />
+                <LibraryComponent />
+                <ToolComponent />
+
               </section>
+
             </section>
 
             <section id="projects" className="font-josefin-sans text-md text-gray-900 dark:text-white">
