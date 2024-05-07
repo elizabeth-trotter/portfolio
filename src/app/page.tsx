@@ -43,6 +43,7 @@ export default function Home() {
 
   const lightColor = "#DC143C";
   const darkColor = "#10B981";
+  // const darkColor = "#FFFFFF";
 
   return (
     <>
