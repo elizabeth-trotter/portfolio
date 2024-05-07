@@ -61,7 +61,7 @@ export default function Home() {
                 <div className="grid grid-cols-3 grid-rows-3">
 
                   <header className="-mx-5 min-[340px]:mx-0 -mt-5 3xs:mt-0 col-span-3 sm:col-span-2 sm:pe-7 text-center 2xs:text-start">
-                    <h1 className="text-3xl sm:text-4xl font-josefin-sans headerText">Hello! I&apos;m Elizabeth </h1>
+                    <h1 className="text-3xl sm:text-4xl font-medium 2xs:font-normal font-josefin-sans headerText">Hello! I&apos;m Elizabeth </h1>
                     <div className="sm:min-h-24">
                       <TypewriterComponent />
                     </div>
