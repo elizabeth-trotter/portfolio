@@ -4,7 +4,7 @@
 import { Drawer, Sidebar } from "flowbite-react";
 
 // Internal imports
-import { HiClipboard, HiCollection, HiUsers, HiOutlineExternalLink, FaLinkedinIn, BsGithub, MdOutlineAlternateEmail, SiCodewars } from "@/app/icons";
+import { HiClipboard, HiCollection, HiUser, HiOutlineExternalLink, HiUserCircle, FaLinkedinIn, BsGithub, MdOutlineAlternateEmail, SiCodewars } from "@/app/icons";
 import { customDrawerTheme } from "../../styles/themes/CustomDrawerTheme";
 
 export function NavbarDrawerComponent(props: { isDarkMode: boolean, isOpen: boolean, handleClose: () => void }) {
@@ -21,7 +21,7 @@ export function NavbarDrawerComponent(props: { isDarkMode: boolean, isOpen: bool
                         <div>
                             <Sidebar.Items>
                                 <Sidebar.ItemGroup>
-                                    <Sidebar.Item href="#about" icon={HiUsers} onClick={props.handleClose}>
+                                    <Sidebar.Item href="#about" icon={HiUser} onClick={props.handleClose}>
                                         About
                                     </Sidebar.Item>
                                     <Sidebar.Item href="#skills" icon={HiClipboard} onClick={props.handleClose}>
@@ -32,17 +32,17 @@ export function NavbarDrawerComponent(props: { isDarkMode: boolean, isOpen: bool
                                     </Sidebar.Item>
                                 </Sidebar.ItemGroup>
                                 <Sidebar.ItemGroup>
-                                    <Drawer.Header title="Connect" titleIcon={HiOutlineExternalLink} className="pt-10" />
-                                    <Sidebar.Item href="mailto:elizabeth.dev.inquiry@gmail.com" icon={MdOutlineAlternateEmail}>
+                                    <Drawer.Header title="Connect" titleIcon={() => <></>} className="pt-10" />
+                                    <Sidebar.Item href="mailto:elizabeth.dev.inquiry@gmail.com" icon={HiOutlineExternalLink}>
                                         Email
                                     </Sidebar.Item>
-                                    <Sidebar.Item href="https://github.com/et120" target='_blank' icon={BsGithub}>
+                                    <Sidebar.Item href="https://github.com/et120" target='_blank' icon={HiOutlineExternalLink}>
                                         GitHub
                                     </Sidebar.Item>
-                                    <Sidebar.Item href="https://www.linkedin.com/in/elizabeth-trotter" target='_blank' icon={FaLinkedinIn}>
+                                    <Sidebar.Item href="https://www.linkedin.com/in/elizabeth-trotter" target='_blank' icon={HiOutlineExternalLink}>
                                         LinkedIn
                                     </Sidebar.Item>
-                                    <Sidebar.Item href="https://www.codewars.com/users/et120" target='_blank' icon={SiCodewars}>
+                                    <Sidebar.Item href="https://www.codewars.com/users/et120" target='_blank' icon={HiOutlineExternalLink}>
                                         Codewars
                                     </Sidebar.Item>
                                 </Sidebar.ItemGroup>

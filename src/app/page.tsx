@@ -84,7 +84,7 @@ export default function Home() {
                     <RoughNotationComponent isDarkMode={isDarkMode} />
                   </article>
 
-                  <section className="mt-6 min-[443px]:mt-3 min-[456px]:mt-0 col-span-3 2xs:mt-10 2xs:col-span-2 2xs:col-start-2 2xs:px-7 xs:px-0 sm:col-span-3 sm:-mt-[4.5rem]">
+                  <section className="mt-6 min-[443px]:mt-3 min-[456px]:mt-0 col-span-3 2xs:mt-10 2xs:col-span-2 2xs:col-start-2 2xs:px-7 xs:px-0 sm:col-span-3 sm:-mt-12">
                     <div className="xs:flex xs:justify-end sm:block">
                       <div className="flex flex-col space-y-4 xs:flex-row xs:justify-start xs:space-y-0">
                         <a href="mailto:elizabeth.dev.inquiry@gmail.com" target="_blank" className="text-sm inline-flex justify-center items-center py-2 px-5 text-center text-white dark:text-black rounded-md bg-black dark:bg-white hover:bg-slate-600 dark:hover:bg-slate-200 focus:ring-4 focus:ring-gray-700 dark:focus:ring-gray-400">
@@ -102,10 +102,10 @@ export default function Home() {
               </section>
 
               <section id="skills" className="my-16 sm:-mt-44 text-md text-gray-900 dark:text-white">
-                <div className="border-t pb-16 border-gray-300 dark:border-gray-600"></div>
+                <div className="border-t mt-8 pb-16 border-gray-300 dark:border-gray-600"></div>
                 <div className="flex items-baseline">
                   <FaLessThan className="text-gray-600 dark:text-gray-300" />
-                  <h1 className="text-2xl font-josefin-sans pb-8 px-1">Skills <span className="text-gray-600 dark:text-gray-300">/</span></h1>
+                  <h1 className="text-2xl font-josefin-sans pb-10 px-1">Skills <span className="text-gray-600 dark:text-gray-300">/</span></h1>
                   <FaGreaterThan className="text-gray-600 dark:text-gray-300" />
                 </div>
                 <section className="grid grid-cols-1 grid-rows-3 gap-2">

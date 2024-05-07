@@ -12,7 +12,8 @@ export { BiSolidDownArrow } from "react-icons/bi";
 export { SiCodewars } from "react-icons/si";
 export { FaLinkedinIn } from "react-icons/fa";
 export { BsGithub } from "react-icons/bs";
-export { HiClipboard, HiCollection, HiUsers, HiOutlineExternalLink } from "react-icons/hi";
+export { HiClipboard, HiCollection, HiUser, HiOutlineExternalLink } from "react-icons/hi";
+export { HiUserCircle } from "react-icons/hi2";
 export { IoIosRocket } from "react-icons/io";
 export { FaRocket } from "react-icons/fa6";
 
