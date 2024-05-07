@@ -10,7 +10,7 @@ import './DynamicText.css';
 const RoughNotationComponent = (props: {isDarkMode: boolean}) => {
     
     return (
-        <div className="font-josefin-slab font-semibold tracking-wide">
+        <div className="font-josefin-slab text-lg 2xs:text-base 2xs:font-semibold 2xs:tracking-wide">
             <RoughNotationGroup show={true}>
                 <p className="inline">I&apos;m a </p>
 
@@ -48,7 +48,7 @@ const RoughNotationComponent = (props: {isDarkMode: boolean}) => {
                     <span style={{ whiteSpace: 'nowrap' }}>exploration</span>
                 </RoughNotation>
 
-                <p className="inline"> in the ever-evolving world of technology.</p>
+                <p className="inline"> in the ever evolving world of technology.</p>
             </RoughNotationGroup>
         </div>
     )
