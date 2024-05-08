@@ -28,13 +28,13 @@ export { TbSql } from "react-icons/tb";
 export { TbFileTypeSql } from "react-icons/tb";
 export { IoLogoPython } from "react-icons/io5";
 
-export { IoLogoJavascript } from "react-icons/io5";
-export { SiTypescript } from "react-icons/si";
+export { IoLogoJavascript } from "react-icons/io5"; //Remove??
+export { SiTypescript } from "react-icons/si"; //Remove??
 
 // Frameworks/Librarires
 export { SiDotnet } from "react-icons/si";
 export { IoLogoReact } from "react-icons/io5";
-export { TbBrandReactNative } from "react-icons/tb"; // React Native??
+export { TbBrandReactNative } from "react-icons/tb"; //Remove??
 export { TbBrandNextjs } from "react-icons/tb";
 export { IoLogoAngular } from "react-icons/io5";
 export { BsBootstrapFill } from "react-icons/bs";
@@ -42,7 +42,7 @@ export { SiTailwindcss } from "react-icons/si";
 
 // Dev Tools
 export { SiMicrosoftazure } from "react-icons/si";
-export { SiAzuredevops } from "react-icons/si";
+export { SiAzuredevops } from "react-icons/si"; //Remove??
 export { SiVisualstudio } from "react-icons/si";
 export { FiFigma } from "react-icons/fi";
 export { SiPostman } from "react-icons/si";
