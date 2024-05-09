@@ -28,10 +28,14 @@ export default function Home() {
   const { mode } = useThemeMode();
   const [isDarkMode, setIsDarkMode] = useState<boolean>(mode === 'dark');
   const [photo, setPhoto] = useState(ProfileLightPhoto);
+  const [scrollColor, setScrollColor] = useState<string>();
+  const lightColor = "#DC143C";
+  const darkColor = "#10B981";
 
   useEffect(() => {
     setIsDarkMode(mode === 'dark');
     setPhoto(isDarkMode ? ProfilePhoto : ProfileLightPhoto);
+    setScrollColor(isDarkMode ? darkColor : lightColor);
   }, [mode, isDarkMode]);
 
   const { scrollYProgress } = useScroll();
@@ -41,13 +45,10 @@ export default function Home() {
     restDelta: 0.001
   });
 
-  const lightColor = "#DC143C";
-  const darkColor = "#10B981";
-  // const darkColor = "#FFFFFF";
 
   return (
     <>
-      <motion.div className="progress-bar" style={{ scaleX, backgroundColor: isDarkMode ? darkColor : lightColor }} />
+      <motion.div className="progress-bar" style={{ scaleX, backgroundColor: scrollColor }} />
       <Flowbite>
         <main className="bg-[#faf0e6] dark:bg-gray-900 flex justify-center">
           <div className="w-full px-5 md:w-4/5 lg:w-3/5 xl:w-1/2 2xl:w-2/5">
@@ -118,7 +119,8 @@ export default function Home() {
               </section>
 
               <section id="projects" className="font-josefin-sans text-md text-gray-900 dark:text-white">
-                <h1 className="text-2xl font-josefin-sans pb-8">Projects</h1>
+                <div className="border-t mt-8 pb-16 border-gray-300 dark:border-gray-600"></div>
+                <h1 className="text-2xl font-josefin-sans pb-8">{".(Projects)"}</h1>
                 <div className="flex flex-col items-center gap-5">
                   <ProjectCardComponent />
                   <ProjectCardComponent />
