@@ -12,23 +12,20 @@ import { motion, useScroll, useSpring } from "framer-motion"
 
 // Internal imports
 import NavbarComponent from "./components/Navbar/NavbarComponent";
-import FooterComponent from "./components/Footer/FooterComponent";
-import TypewriterComponent from "./components/HeaderSection/TypewriterComponent";
-import RoughNotationComponent from "./components/HeaderSection/RoughNotationComponent";
-import ProjectCardComponent from "./components/ProjectsSection/ProjectCardComponent";
+import { TypewriterComponent, RoughNotationComponent } from "./components/HeaderSection";
 import ProfilePhoto from '@/app/assets/images/profile.png';
 import ProfileLightPhoto from '@/app/assets/images/profilelight.png';
-import { BiLogoTypescript, FaGreaterThan, FaLessThan, IoLogoCss3, IoLogoHtml5, IoLogoJavascript, IoLogoPython, RiJavascriptFill, SiCsharp, TbFileTypeSql, TbSql } from "./icons";
-import SkillsCardComponent from "./components/SkillsSection/SkillsCardComponent";
-import LanguageComponent from "./components/SkillsSection/LanguageComponent";
-import LibraryComponent from "./components/SkillsSection/LibraryComponent";
-import ToolComponent from "./components/SkillsSection/ToolComponent";
+import { BiLogoTypescript, FaGreaterThan, FaLessThan, FiFigma, IoLogoJavascript, RiJavascriptFill, SiCsharp, SiDotnet, SiMicrosoftazure, SiTailwindcss, TbBrandNextjs } from "./icons";
+import { LanguageComponent, LibraryComponent, ToolComponent } from './components/SkillsSection'
+import FooterComponent from "./components/Footer/FooterComponent";
+import ProjectCardComponent from "./components/ProjectsSection/ProjectCardComponent";
 
 export default function Home() {
   const { mode } = useThemeMode();
   const [isDarkMode, setIsDarkMode] = useState<boolean>(mode === 'dark');
   const [photo, setPhoto] = useState(ProfileLightPhoto);
   const [scrollColor, setScrollColor] = useState<string>();
+  const [grayscale, setGrayscale] = useState<string>();
   const lightColor = "#DC143C";
   const darkColor = "#10B981";
 
@@ -36,6 +33,7 @@ export default function Home() {
     setIsDarkMode(mode === 'dark');
     setPhoto(isDarkMode ? ProfilePhoto : ProfileLightPhoto);
     setScrollColor(isDarkMode ? darkColor : lightColor);
+    setGrayscale(isDarkMode ? 'grayscale': 'grayscale-0');
   }, [mode, isDarkMode]);
 
   const { scrollYProgress } = useScroll();
@@ -63,7 +61,7 @@ export default function Home() {
 
                   <header className="-mx-5 min-[340px]:mx-0 -mt-5 3xs:mt-0 col-span-3 sm:col-span-2 sm:pe-7 text-center 2xs:text-start">
                     <h1 className="text-3xl sm:text-4xl font-medium 2xs:font-normal font-josefin-sans headerText">Hello! I&apos;m Elizabeth </h1>
-                    <div className="-mx-2 sm:min-h-24">
+                    <div className="min-[340px]:-mx-2 min-[343px]:mx-0 sm:min-h-24">
                       <TypewriterComponent />
                     </div>
                   </header>
@@ -81,7 +79,7 @@ export default function Home() {
                     </div>
                   </section>
 
-                  <article className="text-justify 2xs:text-start col-span-3 2xs:col-span-2 -mt-20 min-[318px]:-mt-16 min-[340px]:-mt-20 min-[346px]:-mt-14 min-[360px]:-mt-12 min-[378px]:-mt-5 min-[400px]:-mt-2 min-[424px]:mt-4 min-[428px]:mt-7 2xs:-mt-6 2xs:ps-7 sm:ps-0 sm:-mt-10">
+                  <article className="text-justify 2xs:text-start col-span-3 2xs:col-span-2 -mt-20 min-[318px]:-mt-16 min-[340px]:-mt-20 min-[347px]:-mt-14 min-[360px]:-mt-12 min-[378px]:-mt-5 min-[400px]:-mt-2 min-[424px]:mt-4 min-[428px]:mt-7 2xs:-mt-6 2xs:ps-7 sm:ps-0 sm:-mt-10">
                     <RoughNotationComponent isDarkMode={isDarkMode} />
                   </article>
 
@@ -102,7 +100,7 @@ export default function Home() {
                 </div>
               </section>
 
-              <section id="skills" className="my-16 sm:-mt-44 text-md text-gray-900 dark:text-white">
+              <section id="skills" className="my-16 pb-4 sm:-mt-44 text-md text-gray-900 dark:text-white">
                 <div className="border-t mt-8 pb-16 border-gray-300 dark:border-gray-600"></div>
                 <div className="flex items-baseline">
                   <FaLessThan className="text-gray-600 dark:text-gray-300" />
@@ -121,10 +119,10 @@ export default function Home() {
               <section id="projects" className="font-josefin-sans text-md text-gray-900 dark:text-white">
                 <div className="border-t mt-8 pb-16 border-gray-300 dark:border-gray-600"></div>
                 <h1 className="text-2xl font-josefin-sans pb-8">{".(Projects)"}</h1>
-                <div className="flex flex-col items-center gap-5">
-                  <ProjectCardComponent />
-                  <ProjectCardComponent />
-                  <ProjectCardComponent />
+                <div className="flex flex-col items-center w-full gap-5">
+                  <ProjectCardComponent title={'PropTrac (in development)'} icons={[BiLogoTypescript, TbBrandNextjs, SiTailwindcss, SiCsharp, SiDotnet, SiMicrosoftazure ]} image={'./Proptrac.png'} grayscale={grayscale ? grayscale : ''}
+                    description={'Full-stack web application project encompassing the software development lifecycle, from pitching the idea to a panel through protoyping, implementing, and deploying the final product. All-in-one tool for property managers.'}
+                  />
                 </div>
               </section>
 

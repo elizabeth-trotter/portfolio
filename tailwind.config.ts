@@ -25,7 +25,7 @@ const config: Config = {
         reactBlue: '#61DBFB',
         nextjsPurple: '#682876',
         angularRed: '#e34c26',
-        bootstrapIndigo: '#264de4',
+        bootstrapIndigo: '#563d7c',
         tailwindBlack: '#000000',
         azureBlue: '#007fff',
         vscodeBlue: '#007acc',

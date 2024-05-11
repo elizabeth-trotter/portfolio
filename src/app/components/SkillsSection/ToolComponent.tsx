@@ -13,8 +13,8 @@ export default function ToolComponent() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1.5 }}
             >
-                <div className="bg-white dark:bg-gray-800 rounded p-8 border dark:border-gray-700">
-                    <h3 className=" font-josefin-sans text-lg pb-5 text-start"><span className='hidden 3xs:inline'>Developer </span>Toolbox</h3>
+                <div className="bg-white dark:bg-gray-800 rounded-lg p-8 border dark:border-gray-700">
+                    <h3 className="font-josefin-sans text-lg pb-5 text-start"><span className='hidden 3xs:inline'>Developer </span>Toolbox</h3>
                     <div className="grid grid-rows-3 grid-cols-2 gap-y-7 xs:grid-rows-2 xs:grid-cols-3 xs:gap-y-5">
                         <SkillsCardComponent icon={SiMicrosoftazure} title="Azure" />
                         <SkillsCardComponent icon={SiVisualstudio} title="VS Code" />

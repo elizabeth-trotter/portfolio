@@ -5,20 +5,27 @@ import { Card } from "flowbite-react";
 
 // Internal imports
 import { customCardTheme } from "@/app/styles/themes/CustomCardTheme";
-import { RiJavascriptFill, SiCsharp } from "@/app/icons";
+import { getTextLogoColor } from "@/app/utils/LogoColorSwitch";
+import CarouselComponent from "./CarouselComponent";
 
-export default function ProjectCardComponent() {
+export default function ProjectCardComponent(props: ProjectCardProps) {
+  let textColorClass = getTextLogoColor(props.title);
+
   return (
-    <Card theme={customCardTheme} className="max-w-sm" imgSrc="./Proptrac.png" horizontal>
-      <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-        Project Title
+    <Card theme={customCardTheme} className={`min-w-sm`} imgSrc={props.image}>
+      {/* <img src="./Proptrac.png" alt={props.title} className={`w-full ${props.grayscale ? 'grayscale' : ''}`} /> */}
+
+      {/* <CarouselComponent /> */}
+      <h5 className=" font-josefin-sans text-xl font-semibold text-gray-900 dark:text-white">
+        {props.title}
       </h5>
       <p className="font-normal text-gray-700 dark:text-gray-400">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum, porro eaque! Eos voluptatem quasi et omnis aperiam porro sequi laborum unde perspiciatis eum! Officiis nostrum hic adipisci dolor provident quia!
+        {props.description}
       </p>
       <div className="flex gap-2">
-        <RiJavascriptFill />
-        <SiCsharp />
+        {props.icons.map((Icon, index) => (
+          <Icon key={index} className={`h-7 w-7 ${textColorClass} dark:text-white`} />
+        ))}
       </div>
     </Card>
   );
