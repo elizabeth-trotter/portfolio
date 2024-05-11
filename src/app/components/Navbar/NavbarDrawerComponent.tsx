@@ -36,13 +36,13 @@ export function NavbarDrawerComponent(props: { isDarkMode: boolean, isOpen: bool
                                     <Sidebar.Item href="mailto:elizabeth.dev.inquiry@gmail.com" icon={HiOutlineExternalLink}>
                                         Email
                                     </Sidebar.Item>
-                                    <Sidebar.Item href="https://github.com/et120" target='_blank' icon={HiOutlineExternalLink}>
+                                    <Sidebar.Item href="https://github.com/elizabeth-trotter" target='_blank' icon={HiOutlineExternalLink}>
                                         GitHub
                                     </Sidebar.Item>
                                     <Sidebar.Item href="https://www.linkedin.com/in/elizabeth-trotter" target='_blank' icon={HiOutlineExternalLink}>
                                         LinkedIn
                                     </Sidebar.Item>
-                                    <Sidebar.Item href="https://www.codewars.com/users/et120" target='_blank' icon={HiOutlineExternalLink}>
+                                    <Sidebar.Item href="https://www.codewars.com/users/elizabeth-trotter" target='_blank' icon={HiOutlineExternalLink}>
                                         Codewars
                                     </Sidebar.Item>
                                 </Sidebar.ItemGroup>
