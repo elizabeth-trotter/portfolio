@@ -15,7 +15,7 @@ const FooterComponent = (props: { isDarkMode: boolean }) => {
             <div className="w-full xs:flex xs:items-center xs:justify-between">
                 <div className='flex text-sm text-gray-500 dark:text-gray-400 sm:text-center'>
                     <Footer.Icon icon={IoIosRocket} />
-                    <p className='ps-2'>2024 <Link className='hover:underline cursor-pointer' href={'#home'}>Elizabeth Trotter</Link></p>
+                    <p className='ps-2'>2024 <Link className='hover:underline cursor-pointer' href={'#home'}>Elizabeth Boron-Trotter</Link></p>
                 </div>
                 <div className="mt-4 flex space-x-6 xs:mt-0 xs:justify-center items-center">
                     <Footer.Icon href="mailto:elizabeth.dev.inquiry@gmail.com" icon={MdOutlineAlternateEmail} />

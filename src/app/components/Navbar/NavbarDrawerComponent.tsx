@@ -11,7 +11,7 @@ export function NavbarDrawerComponent(props: { isDarkMode: boolean, isOpen: bool
 
     return (
         <Drawer theme={customDrawerTheme} open={props.isOpen} onClose={props.handleClose} className="bg-[#faf0e6] font-josefin-sans">
-            <Drawer.Header title="Elizabeth Trotter" titleIcon={() => <></>} />
+            <Drawer.Header title="Elizabeth's Portfolio" titleIcon={() => <></>} />
             <Drawer.Items>
                 <Sidebar
                     aria-label="Sidebar with multi-level dropdown example"
