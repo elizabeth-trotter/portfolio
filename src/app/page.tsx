@@ -70,7 +70,7 @@ export default function Home() {
                     <Image src={photo} alt="profile photo" className={`sm:me-3 border-2 border-white rounded-full aspect-w-1 aspect-h-1 sm:h-44 sm:w-44`} />
 
                     <div className="hidden 2xs:flex flex-row-reverse justify-end sm:flex-row gap-2">
-                      <Link href='https://github.com/et120' target='_blank'>
+                      <Link href='https://github.com/elizabeth-trotter' target='_blank'>
                         <FontAwesomeIcon aria-label="GitHub Icon Link" icon={faGithubSquare} className='text-black dark:text-slate-400 pt-2 sm:pt-0 text-3xl hover:text-slate-600 dark:hover:text-slate-300' />
                       </Link>
                       <Link href='https://www.linkedin.com/in/elizabeth-trotter' target='_blank'>
@@ -86,7 +86,7 @@ export default function Home() {
                   <section className="mt-6 min-[443px]:mt-3 min-[456px]:mt-0 col-span-3 2xs:mt-10 2xs:col-span-2 2xs:col-start-2 2xs:px-7 xs:px-0 sm:col-span-3 sm:-mt-12">
                     <div className="xs:flex xs:justify-end sm:block">
                       <div className="flex flex-col space-y-4 xs:flex-row xs:justify-start xs:space-y-0">
-                        <a href="mailto:elizabeth.dev.inquiry@gmail.com" target="_blank" className="text-sm inline-flex justify-center items-center py-2 px-5 text-center text-white dark:text-black rounded-md bg-black dark:bg-white hover:bg-slate-600 dark:hover:bg-slate-200 focus:ring-4 focus:ring-gray-700 dark:focus:ring-gray-400">
+                        <a href="mailto:hello@elizabeth-trotter.com" target="_blank" className="text-sm inline-flex justify-center items-center py-2 px-5 text-center text-white dark:text-black rounded-md bg-black dark:bg-white hover:bg-slate-600 dark:hover:bg-slate-200 focus:ring-4 focus:ring-gray-700 dark:focus:ring-gray-400">
                           Email Me
                         </a>
                         <a href="#projects" className="py-2 xs:ms-4 inline-flex justify-center items-center px-5 text-sm text-gray-900 focus:outline-none bg-white rounded-md border border-gray-200 hover:bg-gray-100 hover:text-blue-900 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-700 dark:text-gray-100 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-500">
