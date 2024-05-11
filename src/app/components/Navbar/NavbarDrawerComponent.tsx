@@ -33,7 +33,7 @@ export function NavbarDrawerComponent(props: { isDarkMode: boolean, isOpen: bool
                                 </Sidebar.ItemGroup>
                                 <Sidebar.ItemGroup>
                                     <Drawer.Header title="Connect" titleIcon={() => <></>} className="pt-10" />
-                                    <Sidebar.Item href="mailto:elizabeth.dev.inquiry@gmail.com" icon={HiOutlineExternalLink}>
+                                    <Sidebar.Item href="mailto:hello@elizabeth-trotter.com" icon={HiOutlineExternalLink}>
                                         Email
                                     </Sidebar.Item>
                                     <Sidebar.Item href="https://github.com/elizabeth-trotter" target='_blank' icon={HiOutlineExternalLink}>
