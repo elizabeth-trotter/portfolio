@@ -5,6 +5,7 @@ interface SkillsCardProps {
 
 interface ProjectCardProps {
     icons: React.ElementType[];
+    iconNames: string[];
     title: string;
     description: string
     image: string

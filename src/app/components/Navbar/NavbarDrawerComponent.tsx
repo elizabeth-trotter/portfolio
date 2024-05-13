@@ -10,7 +10,7 @@ import { customDrawerTheme } from "../../styles/themes/CustomDrawerTheme";
 export function NavbarDrawerComponent(props: { isDarkMode: boolean, isOpen: boolean, handleClose: () => void }) {
 
     return (
-        <Drawer theme={customDrawerTheme} open={props.isOpen} onClose={props.handleClose} className="bg-[#faf0e6] font-josefin-sans">
+        <Drawer theme={customDrawerTheme} open={props.isOpen} onClose={props.handleClose} className="bg-[#faf0e6] font-josefin-sans" aria-label="Mobile navbar">
             <Drawer.Header title="Elizabeth's Portfolio" titleIcon={() => <></>} />
             <Drawer.Items>
                 <Sidebar
@@ -32,7 +32,9 @@ export function NavbarDrawerComponent(props: { isDarkMode: boolean, isOpen: bool
                                     </Sidebar.Item>
                                 </Sidebar.ItemGroup>
                                 <Sidebar.ItemGroup>
-                                    <Drawer.Header title="Connect" titleIcon={() => <></>} className="pt-10" />
+                                    <li>
+                                        <Drawer.Header title="Connect" titleIcon={() => <></>} className="pt-10" />
+                                    </li>
                                     <Sidebar.Item href="mailto:hello@elizabeth-trotter.com" icon={HiOutlineExternalLink}>
                                         Email
                                     </Sidebar.Item>

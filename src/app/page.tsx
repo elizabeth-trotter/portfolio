@@ -31,7 +31,7 @@ export default function Home() {
 
   useEffect(() => {
     setIsDarkMode(mode === 'dark');
-    setPhoto(isDarkMode ? ProfilePhoto : ProfileLightPhoto);
+    // setPhoto(isDarkMode ? ProfilePhoto : ProfileLightPhoto);
     setScrollColor(isDarkMode ? darkColor : lightColor);
     setGrayscale(isDarkMode ? 'grayscale': 'grayscale-0');
   }, [mode, isDarkMode]);
@@ -48,7 +48,7 @@ export default function Home() {
     <>
       <motion.div className="progress-bar" style={{ scaleX, backgroundColor: scrollColor }} />
       <Flowbite>
-        <main className="bg-[#faf0e6] dark:bg-gray-900 flex justify-center">
+        <main className="bg-[#FCF5E5] dark:bg-gray-900 flex justify-center">
           <div className="w-full px-5 md:w-4/5 lg:w-3/5 xl:w-1/2 2xl:w-2/5">
 
             <nav>
@@ -70,16 +70,16 @@ export default function Home() {
                     <Image src={photo} alt="profile photo" className={`sm:me-3 border-2 border-white rounded-full aspect-w-1 aspect-h-1 sm:h-44 sm:w-44`} />
 
                     <div className="hidden 2xs:flex flex-row-reverse justify-end sm:flex-row gap-2">
-                      <Link href='https://github.com/elizabeth-trotter' target='_blank'>
-                        <FontAwesomeIcon aria-label="GitHub Icon Link" icon={faGithubSquare} className='text-black dark:text-slate-400 pt-2 sm:pt-0 text-3xl hover:text-slate-600 dark:hover:text-slate-300' />
+                      <Link href='https://github.com/elizabeth-trotter' target='_blank' aria-label="GitHub Icon Link">
+                        <FontAwesomeIcon icon={faGithubSquare} className='text-black dark:text-slate-400 pt-2 sm:pt-0 text-3xl hover:text-slate-600 dark:hover:text-slate-300' />
                       </Link>
-                      <Link href='https://www.linkedin.com/in/elizabeth-trotter' target='_blank'>
-                        <FontAwesomeIcon aria-label="LinkedIn Icon Link" icon={faLinkedin} className='text-blue-700 dark:text-slate-400 pt-2 sm:pt-0 text-3xl hover:text-slate-600 dark:hover:text-slate-300' />
+                      <Link href='https://www.linkedin.com/in/elizabeth-trotter' target='_blank' aria-label="LinkedIn Icon Link">
+                        <FontAwesomeIcon icon={faLinkedin} className='text-blue-700 dark:text-slate-400 pt-2 sm:pt-0 text-3xl hover:text-slate-600 dark:hover:text-slate-300' />
                       </Link>
                     </div>
                   </section>
 
-                  <article className="text-justify 2xs:text-start col-span-3 2xs:col-span-2 -mt-20 min-[318px]:-mt-16 min-[340px]:-mt-20 min-[347px]:-mt-14 min-[360px]:-mt-12 min-[378px]:-mt-5 min-[400px]:-mt-2 min-[424px]:mt-4 min-[428px]:mt-7 2xs:-mt-6 2xs:ps-7 sm:ps-0 sm:-mt-10">
+                  <article className="text-justify 2xs:text-start col-span-3 2xs:col-span-2 -mt-20 min-[318px]:-mt-16 min-[340px]:-mt-20 min-[346px]:-mt-14 min-[360px]:-mt-12 min-[378px]:-mt-5 min-[400px]:-mt-2 min-[424px]:mt-4 min-[428px]:mt-7 2xs:-mt-6 2xs:ps-7 sm:ps-0 sm:-mt-10">
                     <RoughNotationComponent isDarkMode={isDarkMode} />
                   </article>
 
@@ -119,9 +119,19 @@ export default function Home() {
               <section id="projects" className="font-josefin-sans text-md text-gray-900 dark:text-white">
                 <div className="border-t mt-8 pb-16 border-gray-300 dark:border-gray-600"></div>
                 <h1 className="text-2xl font-josefin-sans pb-8">{".(Projects)"}</h1>
-                <div className="flex flex-col items-center w-full gap-5">
-                  <ProjectCardComponent title={'PropTrac (in development)'} icons={[BiLogoTypescript, TbBrandNextjs, SiTailwindcss, SiCsharp, SiDotnet, SiMicrosoftazure ]} image={'./Proptrac.png'} grayscale={grayscale ? grayscale : ''}
-                    description={'Full-stack web application project encompassing the software development lifecycle, from pitching the idea to a panel through protoyping, implementing, and deploying the final product. All-in-one tool for property managers.'}
+
+                <div className="flex flex-col items-center w-full gap-10">
+                  <ProjectCardComponent title={'PropTrac (in development)'} icons={[ SiCsharp, SiDotnet, SiMicrosoftazure, BiLogoTypescript, TbBrandNextjs, SiTailwindcss ]} iconNames={[ "C#", ".NET", "Azure", "TypeScript", "Next.js", "Tailwind CSS" ]} image={'./ProptracDesktop.png'} grayscale={grayscale ? grayscale : ''}
+                    description={'Full-stack web application encompassing the software development lifecycle, from pitching the idea to a panel through protoyping, implementing, and deploying the final product. All-in-one tool for property managers.'}
+                  />
+                  <ProjectCardComponent title={'U.S. Weather Report'} icons={[BiLogoTypescript, TbBrandNextjs, SiTailwindcss ]} iconNames={["TypeScript", "Next.js", "Tailwind CSS"]} image={'./WeatherDesktop.png'} grayscale={grayscale ? grayscale : ''}
+                    description={'Crafted and developed a functional and easy-to-use weather application that fetches data from OpenWeatherMap API. Applied state management using hooks to dynamically update data within functional components of the application, ensuring a seamless user experience.'}
+                  />
+                  <ProjectCardComponent title={'Pokedex'} icons={[BiLogoTypescript, TbBrandNextjs, SiTailwindcss ]} iconNames={["TypeScript", "Next.js", "Tailwind CSS"]} image={'./PokedexDesktop.png'} grayscale={grayscale ? grayscale : ''}
+                    description={'Crafted and developed a functional and easy-to-use weather application that fetches data from OpenWeatherMap API. Applied state management using hooks to dynamically update data within functional components of the application, ensuring a seamless user experience.'}
+                  />
+                  <ProjectCardComponent title={'Business Redesign'} icons={[BiLogoTypescript, TbBrandNextjs, SiTailwindcss ]} iconNames={["TypeScript", "Next.js", "Tailwind CSS"]} image={'./BusinessDesktop.png'} grayscale={grayscale ? grayscale : ''}
+                    description={'Crafted and developed a functional and easy-to-use weather application that fetches data from OpenWeatherMap API. Applied state management using hooks to dynamically update data within functional components of the application, ensuring a seamless user experience.'}
                   />
                 </div>
               </section>
