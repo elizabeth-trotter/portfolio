@@ -4,7 +4,7 @@ export const customNavbarTheme: CustomFlowbiteTheme["navbar"] =
 {
     "collapse": {
       "base": "w-full 2xs:block 2xs:w-auto",
-      "list": "mt-4 flex flex-col 2xs:mt-0 2xs:flex-row space-x-8 md:text-sm 2xs:font-medium",
+      "list": "mt-4 flex flex-col 2xs:mt-0 2xs:flex-row space-x-8 3xl:text-lg 4xl:text-xl md:text-sm 2xs:font-medium",
       "hidden": {
         "on": "hidden",
         "off": ""

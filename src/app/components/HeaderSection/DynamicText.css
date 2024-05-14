@@ -23,6 +23,19 @@
     }
 }
 
+@media screen and (min-width: 1900px) {
+    .typeWriterText {
+        font-size: 3rem;
+    }
+}
+
+@media screen and (min-width: 2100px) {
+    .typeWriterText {
+        font-size: 3.75rem;
+        line-height: 4.8rem;
+    }
+}
+
 .blinking {
     animation: blink 1.5s 12s infinite;
 }

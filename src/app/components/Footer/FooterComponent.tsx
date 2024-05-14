@@ -11,7 +11,7 @@ import { BsGithub, SiCodewars, FaLinkedinIn, MdOutlineAlternateEmail, CodewarsFo
 
 const FooterComponent = (props: { isDarkMode: boolean }) => {
     return (
-        <Footer container className="bg-[#FCF5E5] dark:bg-gray-900 font-josefin-sans border-0 shadow-none">
+        <Footer container className="bg-gray-100 dark:bg-gray-900 font-josefin-sans border-0 shadow-none">
             <div className="w-full xs:flex xs:items-center xs:justify-between">
                 <div className='flex text-sm sm:text-center text-gray-500 dark:text-gray-400'>
                     <Footer.Icon icon={IoIosRocket} />

@@ -17,7 +17,7 @@ export default function NavbarComponent(props: { isDarkMode: boolean }) {
 
   return (
     <>
-      <Navbar theme={customNavbarTheme} fluid rounded className="bg-[#FCF5E5] dark:bg-gray-900 font-josefin-sans pt-5">
+      <Navbar theme={customNavbarTheme} fluid rounded className="bg-gray-100 dark:bg-gray-900 font-josefin-sans pt-5">
         <Navbar.Toggle onClick={() => setIsOpen(true)} />
         <Navbar.Collapse className="w-full md:block md:w-auto max-[400px]:hidden">
           <Navbar.Link href="#about" active>

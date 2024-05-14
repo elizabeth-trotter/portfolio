@@ -10,7 +10,7 @@ import { customDrawerTheme } from "../../styles/themes/CustomDrawerTheme";
 export function NavbarDrawerComponent(props: { isDarkMode: boolean, isOpen: boolean, handleClose: () => void }) {
 
     return (
-        <Drawer theme={customDrawerTheme} open={props.isOpen} onClose={props.handleClose} className="bg-[#faf0e6] font-josefin-sans" aria-label="Mobile navbar">
+        <Drawer theme={customDrawerTheme} open={props.isOpen} onClose={props.handleClose} className="bg-gray-100 font-josefin-sans" aria-label="Mobile navbar">
             <Drawer.Header title="Elizabeth's Portfolio" titleIcon={() => <></>} />
             <Drawer.Items>
                 <Sidebar

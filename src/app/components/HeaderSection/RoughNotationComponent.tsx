@@ -10,7 +10,7 @@ import './DynamicText.css';
 const RoughNotationComponent = (props: {isDarkMode: boolean}) => {
     
     return (
-        <div className="font-josefin-sans text-lg 2xs:text-base sm:text-lg 2xs:font-josefin-slab 2xs:font-semibold 2xs:tracking-wide">
+        <div className="font-josefin-sans text-lg 2xs:text-base sm:text-lg 3xl:text-xl 4xl:text-2xl 2xs:font-josefin-slab 2xs:font-semibold 2xs:tracking-wide">
             <RoughNotationGroup show={true}>
                 <p className="inline">I&apos;m a </p>
 

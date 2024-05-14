@@ -9,4 +9,7 @@ interface ProjectCardProps {
     title: string;
     description: string
     image: string
+    imageMobile : string
+    github: string
+    site: string
 }
