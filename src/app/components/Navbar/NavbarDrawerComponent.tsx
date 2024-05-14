@@ -4,7 +4,7 @@
 import { Drawer, Sidebar } from "flowbite-react";
 
 // Internal imports
-import { HiClipboard, HiCollection, HiUser, HiOutlineExternalLink, HiUserCircle, FaLinkedinIn, BsGithub, MdOutlineAlternateEmail, SiCodewars } from "@/app/icons";
+import { HiClipboard, HiCollection, HiUser, HiOutlineExternalLink } from "@/app/icons";
 import { customDrawerTheme } from "../../styles/themes/CustomDrawerTheme";
 
 export function NavbarDrawerComponent(props: { isDarkMode: boolean, isOpen: boolean, handleClose: () => void }) {

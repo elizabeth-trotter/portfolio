@@ -1,12 +1,15 @@
+// External imports
+import { useEffect, useState } from "react";
 import { Card } from "flowbite-react";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import Link from "next/link";
+
+// Internal imports
 import { customCardTheme } from "@/app/styles/themes/CustomCardTheme";
 import { getTextLogoColor } from "@/app/utils/LogoColorSwitch";
-import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithubSquare } from "@fortawesome/free-brands-svg-icons";
-import { HiOutlineExternalLink } from "react-icons/hi";
+import { HiOutlineExternalLink } from "@/app/icons";
 
 // import CarouselComponent from "./CarouselComponent";
 export default function ProjectCardComponent(props: ProjectCardProps) {

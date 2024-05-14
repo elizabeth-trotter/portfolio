@@ -7,9 +7,9 @@ import React from 'react';
 import { Footer } from 'flowbite-react';
 
 // Internal imports
-import { BsGithub, SiCodewars, FaLinkedinIn, MdOutlineAlternateEmail, CodewarsFooter, IoIosRocket } from "@/app/icons";
+import { BsGithub, FaLinkedinIn, MdOutlineAlternateEmail, CodewarsFooter, IoIosRocket } from "@/app/icons";
 
-const FooterComponent = (props: { isDarkMode: boolean }) => {
+const FooterComponent = () => {
     return (
         <Footer container className="bg-gray-100 dark:bg-gray-900 font-josefin-sans border-0 shadow-none">
             <div className="w-full xs:flex xs:items-center xs:justify-between">

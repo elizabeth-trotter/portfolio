@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react'
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import SkillsCardComponent from './SkillsCardComponent'
 import { RiJavascriptFill, BiLogoTypescript, SiCsharp, IoLogoHtml5, IoLogoCss3, TbSql } from '@/app/icons'
 

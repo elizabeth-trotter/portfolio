@@ -13,12 +13,10 @@ import { motion, useScroll, useSpring } from "framer-motion"
 // Internal imports
 import NavbarComponent from "./components/Navbar/NavbarComponent";
 import { TypewriterComponent, RoughNotationComponent } from "./components/HeaderSection";
-import ProfilePhoto from '@/app/assets/images/profile.png';
 import ProfileLightPhoto from '@/app/assets/images/profilelight.png';
-import { BiLogoTypescript, FaGreaterThan, FaLessThan, FiFigma, IoLogoHtml5, IoLogoJavascript, RiJavascriptFill, SiCsharp, SiDotnet, SiMicrosoftazure, SiTailwindcss, TbBrandNextjs } from "./icons";
+import { FaGreaterThan, FaLessThan } from "./icons";
 import { LanguageComponent, LibraryComponent, ToolComponent } from './components/SkillsSection'
 import FooterComponent from "./components/Footer/FooterComponent";
-import ProjectCardComponent from "./components/ProjectsSection/ProjectCardComponent";
 import PropTracComponent from "./components/ProjectsSection/PropTracComponent";
 import WeatherComponent from "./components/ProjectsSection/WeatherComponent";
 import PokedexComponent from "./components/ProjectsSection/PokedexComponent";
@@ -27,17 +25,13 @@ import BusinessComponent from "./components/ProjectsSection/BusinessComponent";
 export default function Home() {
   const { mode } = useThemeMode();
   const [isDarkMode, setIsDarkMode] = useState<boolean>(mode === 'dark');
-  const [photo, setPhoto] = useState(ProfileLightPhoto);
   const [scrollColor, setScrollColor] = useState<string>();
-  const [grayscale, setGrayscale] = useState<string>();
   const lightColor = "#DC143C";
   const darkColor = "#10B981";
 
   useEffect(() => {
     setIsDarkMode(mode === 'dark');
-    // setPhoto(isDarkMode ? ProfilePhoto : ProfileLightPhoto);
     setScrollColor(isDarkMode ? darkColor : lightColor);
-    setGrayscale(isDarkMode ? 'grayscale': 'grayscale-0');
   }, [mode, isDarkMode]);
 
   const { scrollYProgress } = useScroll();
@@ -46,7 +40,6 @@ export default function Home() {
     damping: 30,
     restDelta: 0.001
   });
-
 
   return (
     <>
@@ -71,7 +64,7 @@ export default function Home() {
                   </header>
 
                   <section className="col-span-3 2xs:col-span-1 flex flex-col px-10 min-[340px]:px-16 2xs:px-0 -mt-16 min-[318px]:-mt-16 min-[340px]:-mt-14 min-[378px]:-mt-14 min-[400px]:-mt-12 min-[424px]:-mt-10 min-[443px]:-mt-12 min-[450px]:-mt-14 2xs:-mt-2 min-[530px]:-mt-8 sm:mt-0 sm:items-end">
-                    <Image src={photo} alt="profile photo" className={`sm:me-3 border-2 border-white rounded-full aspect-w-1 aspect-h-1 sm:h-44 sm:w-44 3xl:h-48 3xl:w-48 4xl:h-56 4xl:w-56 3xl:me-8 4xl:me-16`} />
+                    <Image src={ProfileLightPhoto} alt="profile photo" className={`sm:me-3 border-2 border-white rounded-full aspect-w-1 aspect-h-1 sm:h-44 sm:w-44 3xl:h-48 3xl:w-48 4xl:h-56 4xl:w-56 3xl:me-8 4xl:me-16`} />
 
                     <div className="hidden 2xs:flex flex-row-reverse justify-end sm:flex-row gap-2 4xl:me-5">
                       <Link href='https://github.com/elizabeth-trotter' target='_blank' aria-label="GitHub Icon Link">
@@ -135,7 +128,7 @@ export default function Home() {
             </div>
 
             <footer className="pt-12">
-              <FooterComponent isDarkMode={isDarkMode} />
+              <FooterComponent />
             </footer>
 
           </div>
