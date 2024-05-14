@@ -69,7 +69,7 @@ export default function ProjectCardComponent(props: ProjectCardProps) {
           </div>
           <div className="flex flex-col items-center 3xs:flex-row 3xs:items-baseline">
             <div className="px-4 rounded sm:hover:border sm:hover:shadow-md flex gap-1 pt-6 sm:pt-0 sm:hidden">
-              <Link className="dark:font-light" href={props.site} target="_blank">View Repo</Link>
+              <Link className="dark:font-light" href={props.github} target="_blank">View Repo</Link>
               <HiOutlineExternalLink className="h-4 w-4 pt-1" />
             </div>
             <p className="hidden 3xs:inline">|</p>
