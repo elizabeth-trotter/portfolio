@@ -9,5 +9,4 @@ interface ProjectCardProps {
     title: string;
     description: string
     image: string
-    grayscale: string
 }

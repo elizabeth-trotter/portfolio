@@ -15,10 +15,14 @@ import NavbarComponent from "./components/Navbar/NavbarComponent";
 import { TypewriterComponent, RoughNotationComponent } from "./components/HeaderSection";
 import ProfilePhoto from '@/app/assets/images/profile.png';
 import ProfileLightPhoto from '@/app/assets/images/profilelight.png';
-import { BiLogoTypescript, FaGreaterThan, FaLessThan, FiFigma, IoLogoJavascript, RiJavascriptFill, SiCsharp, SiDotnet, SiMicrosoftazure, SiTailwindcss, TbBrandNextjs } from "./icons";
+import { BiLogoTypescript, FaGreaterThan, FaLessThan, FiFigma, IoLogoHtml5, IoLogoJavascript, RiJavascriptFill, SiCsharp, SiDotnet, SiMicrosoftazure, SiTailwindcss, TbBrandNextjs } from "./icons";
 import { LanguageComponent, LibraryComponent, ToolComponent } from './components/SkillsSection'
 import FooterComponent from "./components/Footer/FooterComponent";
 import ProjectCardComponent from "./components/ProjectsSection/ProjectCardComponent";
+import PropTracComponent from "./components/ProjectsSection/PropTracComponent";
+import WeatherComponent from "./components/ProjectsSection/WeatherComponent";
+import PokedexComponent from "./components/ProjectsSection/PokedexComponent";
+import BusinessComponent from "./components/ProjectsSection/BusinessComponent";
 
 export default function Home() {
   const { mode } = useThemeMode();
@@ -49,7 +53,7 @@ export default function Home() {
       <motion.div className="progress-bar" style={{ scaleX, backgroundColor: scrollColor }} />
       <Flowbite>
         <main className="bg-[#FCF5E5] dark:bg-gray-900 flex justify-center">
-          <div className="w-full px-5 md:w-4/5 lg:w-3/5 xl:w-1/2 2xl:w-2/5">
+          <div className="w-full px-5 md:w-4/5 lg:w-3/5 xl:w-1/2 2xl:w-3/7 3xl:w-2/5">
 
             <nav>
               <NavbarComponent isDarkMode={isDarkMode} />
@@ -83,7 +87,7 @@ export default function Home() {
                     <RoughNotationComponent isDarkMode={isDarkMode} />
                   </article>
 
-                  <section className="mt-6 min-[443px]:mt-3 min-[456px]:mt-0 col-span-3 2xs:mt-10 2xs:col-span-2 2xs:col-start-2 2xs:px-7 xs:px-0 sm:col-span-3 sm:-mt-12">
+                  <section className="mt-6 min-[443px]:mt-3 min-[456px]:mt-0 col-span-3 2xs:mt-10 2xs:col-span-2 2xs:col-start-2 2xs:px-7 xs:px-0 sm:col-span-3 sm:-mt-12 pt-2">
                     <div className="xs:flex xs:justify-end sm:block">
                       <div className="flex flex-col space-y-4 xs:flex-row xs:justify-start xs:space-y-0">
                         <a href="mailto:hello@elizabeth-trotter.com" target="_blank" className="text-sm inline-flex justify-center items-center py-2 px-5 text-center text-white dark:text-black rounded-md bg-black dark:bg-white hover:bg-slate-600 dark:hover:bg-slate-200 focus:ring-4 focus:ring-gray-700 dark:focus:ring-gray-400">
@@ -121,18 +125,10 @@ export default function Home() {
                 <h1 className="text-2xl font-josefin-sans pb-8">{".(Projects)"}</h1>
 
                 <div className="flex flex-col items-center w-full gap-10">
-                  <ProjectCardComponent title={'PropTrac (in development)'} icons={[ SiCsharp, SiDotnet, SiMicrosoftazure, BiLogoTypescript, TbBrandNextjs, SiTailwindcss ]} iconNames={[ "C#", ".NET", "Azure", "TypeScript", "Next.js", "Tailwind CSS" ]} image={'./ProptracDesktop.png'} grayscale={grayscale ? grayscale : ''}
-                    description={'Full-stack web application encompassing the software development lifecycle, from pitching the idea to a panel through protoyping, implementing, and deploying the final product. All-in-one tool for property managers.'}
-                  />
-                  <ProjectCardComponent title={'U.S. Weather Report'} icons={[BiLogoTypescript, TbBrandNextjs, SiTailwindcss ]} iconNames={["TypeScript", "Next.js", "Tailwind CSS"]} image={'./WeatherDesktop.png'} grayscale={grayscale ? grayscale : ''}
-                    description={'Crafted and developed a functional and easy-to-use weather application that fetches data from OpenWeatherMap API. Applied state management using hooks to dynamically update data within functional components of the application, ensuring a seamless user experience.'}
-                  />
-                  <ProjectCardComponent title={'Pokedex'} icons={[BiLogoTypescript, TbBrandNextjs, SiTailwindcss ]} iconNames={["TypeScript", "Next.js", "Tailwind CSS"]} image={'./PokedexDesktop.png'} grayscale={grayscale ? grayscale : ''}
-                    description={'Crafted and developed a functional and easy-to-use weather application that fetches data from OpenWeatherMap API. Applied state management using hooks to dynamically update data within functional components of the application, ensuring a seamless user experience.'}
-                  />
-                  <ProjectCardComponent title={'Business Redesign'} icons={[BiLogoTypescript, TbBrandNextjs, SiTailwindcss ]} iconNames={["TypeScript", "Next.js", "Tailwind CSS"]} image={'./BusinessDesktop.png'} grayscale={grayscale ? grayscale : ''}
-                    description={'Crafted and developed a functional and easy-to-use weather application that fetches data from OpenWeatherMap API. Applied state management using hooks to dynamically update data within functional components of the application, ensuring a seamless user experience.'}
-                  />
+                  <PropTracComponent />
+                  <WeatherComponent />
+                  <PokedexComponent />
+                  <BusinessComponent />
                 </div>
               </section>
 

@@ -35,6 +35,7 @@ const config: Config = {
         gitBlack: '#000000'
       },
       screens: {
+        '3xl': '1900px',
         'xs': '575px',
         '2xs': '480px',
         '3xs': '400px'
