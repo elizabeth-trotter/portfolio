@@ -11,7 +11,7 @@ function WeatherComponent(props: { index: number }) {
         icons={[BiLogoTypescript, TbBrandNextjs, SiTailwindcss]}
         iconNames={["TypeScript", "Next.js", "Tailwind CSS"]}
         image='./WeatherDesktop.jpg'
-        imageMobile='./WeatherMobile.jpg'
+        imageMobile='./WeatherMobile.png'
         description='Crafted and developed a functional and easy-to-use weather application that fetches data from OpenWeatherMap API. Applied state management using React hooks to dynamically update data within functional components of the application.'
         github='https://github.com/elizabeth-trotter/weatherreport'
         site='https://usweatherreport.vercel.app'
