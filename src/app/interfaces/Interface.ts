@@ -4,6 +4,7 @@ interface SkillsCardProps {
 }
 
 interface ProjectCardProps {
+    index: number;
     icons: React.ElementType[];
     iconNames: string[];
     title: string;

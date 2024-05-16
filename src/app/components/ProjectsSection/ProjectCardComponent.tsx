@@ -1,5 +1,5 @@
 // External imports
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Card } from "flowbite-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -13,8 +13,28 @@ import { HiOutlineExternalLink } from "@/app/icons";
 
 // import CarouselComponent from "./CarouselComponent";
 export default function ProjectCardComponent(props: ProjectCardProps) {
+  const [hoveredCard, setHoveredCard] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [imgSrc, setImgSrc] = useState<string>(props.image);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  // const handleScroll = () => {
+  //   const card = cardRef.current;
+  //   if (card) {
+  //     console.log('card exists')
+  //     const { top, bottom } = card.getBoundingClientRect();
+  //     const isVisible = top >= 0 && bottom <= window.innerHeight;
+  //     setHoveredCard(isVisible);
+  //     console.log(hoveredCard)
+  //   }
+  // };
+
+  // const handleWheel = () => {
+  //   // If the card is hovered, ensure it stays hovered during scroll
+  //   if (hoveredCard) {
+  //     setHoveredCard(true);
+  //   }
+  // };
 
   useEffect(() => {
     const handleResize = () => {
@@ -34,8 +54,44 @@ export default function ProjectCardComponent(props: ProjectCardProps) {
     };
   }, [props.image, props.imageMobile]);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setHoveredCard(true);
+          } else {
+            setHoveredCard(false);
+          }
+        });
+      },
+      { threshold: 0.75 } // Adjust threshold as needed
+    );
+
+    const card = cardRef.current;
+    if (card) {
+      observer.observe(card);
+    }
+
+    return () => {
+      if (card) {
+        observer.unobserve(card);
+      }
+    };
+  }, [cardRef]);
+
   return (
-    <motion.div whileInView={{ scale: 1.05 }} whileHover={{ scale: 1.1 }} className="flex flex-col items-center justify-center gap-2 3xl:gap-3">
+    <motion.div initial={{ scale: 0.90 }} whileInView={{ scale: 1 }} whileHover={{ scale: 1.05 }}
+      className="flex flex-col items-center justify-center gap-2 3xl:gap-3 overflow-hidden"
+      // onMouseEnter={() => setHoveredCard(true)}
+      // onMouseLeave={() => setHoveredCard(false)}
+      // onTouchStart={() => setHoveredCard(true)}
+      // onTouchEnd={() => setHoveredCard(false)}
+      // onWheel={handleWheel}
+      // onWheel={handleScroll}
+      // onTouchMove={handleScroll}    
+      ref={cardRef}
+    >
       <Card theme={customCardTheme} className={`min-w-sm`} imgSrc={imgSrc}>
         <div className="flex justify-between items-center">
           <p className="font-josefin-sans text-xl 3xl:text-2xl 4xl:text-3xl font-semibold text-gray-900 dark:text-white">
@@ -45,10 +101,16 @@ export default function ProjectCardComponent(props: ProjectCardProps) {
             <FontAwesomeIcon icon={faGithubSquare} className='text-black dark:text-slate-400 pt-2 sm:pt-0 text-3xl 3xl:text-4xl 4xl:text-5xl hover:text-slate-600 dark:hover:text-slate-300' />
           </Link>
         </div>
+        <motion.div 
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: hoveredCard ? 1 : 0, height: hoveredCard ? "auto" : 0 }}
+          transition={{ duration: 0.3 }}
+        >
         <p className="text-balance 3xl:text-lg 4xl:text-xl font-normal text-gray-700 dark:text-gray-400">
           {props.description}
         </p>
-        <p className="font-semibold dark:font-medium 3xl:text-lg 4xl:text-xl">Built with:</p>
+        <p className="py-3 font-semibold dark:font-medium 3xl:text-lg 4xl:text-xl">Built with:</p>
+
         <div className="flex flex-col sm:flex-row justify-between items-center">
           <div className="grid grid-cols-3 grid-rows-2 3xs:grid-rows-1 3xs:grid-cols-6 gap-4">
             {props.icons.map((Icon, index) => (
@@ -63,7 +125,7 @@ export default function ProjectCardComponent(props: ProjectCardProps) {
               >
                 <Icon className={`${index < 3 ? '-mb-5' : ''} 3xs:mb-0 h-7 w-7 3xl:h-8 3xl:w-8 4xl:h-10 4xl:w-10 ${getTextLogoColor(props.iconNames[index])} dark:text-white`} />
                 {hoveredIndex === index && (
-                  <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 bg-black text-white rounded-md p-2 pointer-events-none transition-opacity duration-300 whitespace-nowrap">
+                  <div className="absolute z-1 left-1/2 transform -translate-x-1/2 bottom-full bg-black text-white rounded-md p-2 pointer-events-none transition-opacity duration-300 whitespace-nowrap">
                     {props.iconNames[index]}
                   </div>
                 )}
@@ -83,6 +145,7 @@ export default function ProjectCardComponent(props: ProjectCardProps) {
           </div>
 
         </div>
+        </motion.div>
       </Card>
 
     </motion.div>

@@ -3,7 +3,7 @@
 // External imports
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Flowbite, useThemeMode } from "flowbite-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesDown } from "@fortawesome/free-solid-svg-icons";
@@ -29,6 +29,14 @@ export default function Home() {
   const lightColor = "#DC143C";
   const darkColor = "#10B981";
 
+  const homeRef = useRef<HTMLElement>(null);
+
+  const scrollToHome = () => {
+    if (homeRef.current) {
+      homeRef.current.scrollIntoView({ behavior: 'instant' });
+    }
+  };
+
   useEffect(() => {
     setIsDarkMode(mode === 'dark');
     setScrollColor(isDarkMode ? darkColor : lightColor);
@@ -45,7 +53,7 @@ export default function Home() {
     <>
       <motion.div className="progress-bar" style={{ scaleX, backgroundColor: scrollColor }} />
       <Flowbite>
-        <main className="bg-gray-100 dark:bg-gray-900 flex justify-center">
+        <main className="bg-gray-100 dark:bg-gray-900 flex justify-center" ref={homeRef}>
           <div className="w-full px-5 md:w-4/5 lg:w-3/5 xl:w-1/2">
 
             <nav>
@@ -118,17 +126,17 @@ export default function Home() {
                 <h1 className="text-2xl 3xl:text-3xl 4xl:text-4xl font-josefin-sans pb-12">{".(Projects)"}</h1>
 
                 <div className="flex flex-col items-center w-full gap-16 xs:gap-11">
-                  <PropTracComponent />
-                  <WeatherComponent />
-                  <PokedexComponent />
-                  <BusinessComponent />
+                  <PropTracComponent index={0} />
+                  <WeatherComponent index={1} />
+                  <PokedexComponent index={2} />
+                  <BusinessComponent index={3} />
                 </div>
               </section>
 
             </div>
 
             <footer className="pt-12">
-              <FooterComponent />
+              <FooterComponent scrollToHome={scrollToHome} />
             </footer>
 
           </div>

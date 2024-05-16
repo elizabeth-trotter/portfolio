@@ -2,10 +2,11 @@ import React from 'react'
 import ProjectCardComponent from "./ProjectCardComponent"
 import { RiJavascriptFill, IoLogoHtml5, IoLogoCss3, BsBootstrapFill } from '@/app/icons'
 
-function BusinessComponent() {
+function BusinessComponent(props: { index: number }) {
   return (
     <div>
       <ProjectCardComponent 
+        index={props.index}
         title='Business Redesign'
         icons={[RiJavascriptFill, IoLogoHtml5, IoLogoCss3, BsBootstrapFill ]} 
         iconNames={["JavaScript", "HTML", "CSS", "Bootstrap"]} 

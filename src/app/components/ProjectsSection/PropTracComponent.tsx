@@ -2,13 +2,14 @@ import React from 'react'
 import ProjectCardComponent from "./ProjectCardComponent"
 import { SiCsharp, SiDotnet, SiMicrosoftazure, BiLogoTypescript, TbBrandNextjs, SiTailwindcss } from '@/app/icons'
 
-function PropTracComponent() {
+function PropTracComponent(props: { index: number }) {
   return (
     <div>
-      <ProjectCardComponent 
+      <ProjectCardComponent
+        index={props.index}
         title='PropTrac (in development)'
-        icons={[SiCsharp, SiDotnet, SiMicrosoftazure, BiLogoTypescript, TbBrandNextjs, SiTailwindcss]} 
-        iconNames={["C#", ".NET", "Azure", "TypeScript", "Next.js", "Tailwind CSS"]} 
+        icons={[SiCsharp, SiDotnet, SiMicrosoftazure, BiLogoTypescript, TbBrandNextjs, SiTailwindcss]}
+        iconNames={["C#", ".NET", "Azure", "TypeScript", "Next.js", "Tailwind CSS"]}
         image='./ProptracDesktop.jpg'
         imageMobile='./ProptracMobile.png'
         description='Full-stack web application following the software development lifecycle. Leading backend, creating internal API with Model-View-Controller architecture, and managing relational database with Azure SQL Cloud. All-in-one tool for property managers.'

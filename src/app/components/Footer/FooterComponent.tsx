@@ -9,13 +9,14 @@ import { Footer } from 'flowbite-react';
 // Internal imports
 import { BsGithub, FaLinkedinIn, MdOutlineAlternateEmail, CodewarsFooter, IoIosRocket } from "@/app/icons";
 
-const FooterComponent = () => {
+const FooterComponent = (props: { scrollToHome: () => void }) => {
+
     return (
         <Footer container className="bg-gray-100 dark:bg-gray-900 font-josefin-sans border-0 shadow-none">
             <div className="w-full xs:flex xs:items-center xs:justify-between">
                 <div className='flex text-sm sm:text-center text-gray-500 dark:text-gray-400'>
                     <Footer.Icon icon={IoIosRocket} />
-                    <p className='text-gray-700 dark:text-gray-400 ps-2'>2024 <Link className='hover:underline cursor-pointer' href={'#home'}>elizabeth-trotter</Link></p>
+                    <p className='text-gray-700 dark:text-gray-400 ps-2'>2024 <span className='hover:underline cursor-pointer' onClick={props.scrollToHome}>elizabeth-trotter</span></p>
                 </div>
                 <div className="mt-4 flex space-x-6 xs:mt-0 xs:justify-center items-center">
                     <Footer.Icon href="mailto:hello@elizabeth-trotter.com" icon={MdOutlineAlternateEmail} aria-label="Send an Email" />

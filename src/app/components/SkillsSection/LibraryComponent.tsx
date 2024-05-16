@@ -12,6 +12,7 @@ export default function LibraryComponent() {
                 initial={{ opacity: -0, x: '50%' }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1.5 }}
+                viewport={{ once: true }}
             >
                 <div className="bg-white dark:bg-gray-800 border-gray-300 rounded-lg p-8 3xl:px-10 3xl:pt-10 3xl:pb-12 border dark:border-gray-700">
                     <p className="font-josefin-sans text-lg 3xl:text-xl 4xl:text-2xl pb-5 3xl:pb-10 text-start">Frameworks<span className='hidden 3xs:inline'> & Libraries</span></p>
