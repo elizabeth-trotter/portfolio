@@ -40,46 +40,45 @@ export default function ProjectCardComponent(props: ProjectCardProps) {
     const handleResize = () => {
       const newImgSrc = window.innerWidth < 480 ? props.imageMobile : props.image;
       setImgSrc(newImgSrc);
+
+      const isMobile = window.innerWidth < 480;
+      setHoveredCard(isMobile);
     };
 
-    // Add event listener for window resize
     window.addEventListener('resize', handleResize);
-
-    // Call handleResize initially
     handleResize();
-
-    // Cleanup function to remove event listener
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [props.image, props.imageMobile]);
+  }, []);
 
   useEffect(() => {
-    const threshold = window.innerWidth < 768 ? 0.25 : 0.75; // Adjust threshold based on screen width
+    if (window.innerWidth > 480) {
+      const threshold = window.innerWidth < 768 ? 0.5 : 0.6;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setHoveredCard(true);
-          } else {
-            setHoveredCard(false);
-          }
-        });
-      },
-      { threshold: threshold }
-    );
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setHoveredCard(true);
+            } else {
+              setHoveredCard(false);
+            }
+          });
+        },
+        { threshold: threshold }
+      );
 
-    const card = cardRef.current;
-    if (card) {
-      observer.observe(card);
-    }
-
-    return () => {
+      const card = cardRef.current;
       if (card) {
-        observer.unobserve(card);
+        observer.observe(card);
       }
-    };
+
+      return () => {
+        if (card) {
+          observer.unobserve(card);
+        }
+      };
+    } else {
+      setHoveredCard(true);
+    }
   }, [cardRef]);
 
   return (
@@ -103,50 +102,50 @@ export default function ProjectCardComponent(props: ProjectCardProps) {
             <FontAwesomeIcon icon={faGithubSquare} className='text-black dark:text-slate-400 pt-2 sm:pt-0 text-3xl 3xl:text-4xl 4xl:text-5xl hover:text-slate-600 dark:hover:text-slate-300' />
           </Link>
         </div>
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: hoveredCard ? 1 : 0, height: hoveredCard ? "auto" : 0 }}
           transition={{ duration: 0.3 }}
         >
-        <p className="text-balance 3xl:text-lg 4xl:text-xl font-normal text-gray-700 dark:text-gray-400">
-          {props.description}
-        </p>
-        <p className="py-3 font-semibold dark:font-medium 3xl:text-lg 4xl:text-xl">Built with:</p>
+          <p className="text-balance 3xl:text-lg 4xl:text-xl font-normal text-gray-700 dark:text-gray-400">
+            {props.description}
+          </p>
+          <p className="py-3 font-semibold dark:font-medium 3xl:text-lg 4xl:text-xl">Built with:</p>
 
-        <div className="flex flex-col sm:flex-row justify-between items-center">
-          <div className="grid grid-cols-3 grid-rows-2 3xs:grid-rows-1 3xs:grid-cols-6 gap-4">
-            {props.icons.map((Icon, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: -0, x: '50%' }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 1.5 }}
-                className="relative"
-                onMouseEnter={() => setHoveredIndex(index)}
-                onMouseLeave={() => setHoveredIndex(null)}
-              >
-                <Icon className={`${index < 3 ? '-mb-5' : ''} 3xs:mb-0 h-7 w-7 3xl:h-8 3xl:w-8 4xl:h-10 4xl:w-10 ${getTextLogoColor(props.iconNames[index])} dark:text-white`} />
-                {hoveredIndex === index && (
-                  <div className="absolute z-1 left-1/2 transform -translate-x-1/2 bottom-full bg-black text-white rounded-md p-2 pointer-events-none transition-opacity duration-300 whitespace-nowrap">
-                    {props.iconNames[index]}
-                  </div>
-                )}
-              </motion.div>
-            ))}
-          </div>
-          <div className="flex flex-col items-center 3xs:flex-row 3xs:items-baseline">
-            <div className="px-4 rounded sm:hover:border sm:hover:shadow-md flex gap-1 pt-6 sm:pt-0 sm:hidden">
-              <Link className="dark:font-light" href={props.github} target="_blank">View Repo</Link>
-              <HiOutlineExternalLink className="h-4 w-4 pt-1" />
+          <div className="flex flex-col sm:flex-row justify-between items-center">
+            <div className="grid grid-cols-3 grid-rows-2 3xs:grid-rows-1 3xs:grid-cols-6 gap-4">
+              {props.icons.map((Icon, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: -0, x: '50%' }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 1.5 }}
+                  className="relative"
+                  onMouseEnter={() => setHoveredIndex(index)}
+                  onMouseLeave={() => setHoveredIndex(null)}
+                >
+                  <Icon className={`${index < 3 ? '-mb-5' : ''} 3xs:mb-0 h-7 w-7 3xl:h-8 3xl:w-8 4xl:h-10 4xl:w-10 ${getTextLogoColor(props.iconNames[index])} dark:text-white`} />
+                  {hoveredIndex === index && (
+                    <div className="absolute z-1 left-1/2 transform -translate-x-1/2 bottom-full bg-black text-white rounded-md p-2 pointer-events-none transition-opacity duration-300 whitespace-nowrap">
+                      {props.iconNames[index]}
+                    </div>
+                  )}
+                </motion.div>
+              ))}
             </div>
-            <p className="hidden 3xs:inline sm:hidden">|</p>
-            <div className="px-4 rounded sm:hover:border sm:hover:shadow-md flex gap-1 pt-2 3xs:pt-6 sm:pt-0">
-              <Link className="dark:font-light" href={props.site} target="_blank">View Site</Link>
-              <HiOutlineExternalLink className="h-4 w-4 pt-1" />
+            <div className="flex flex-col items-center 3xs:flex-row 3xs:items-baseline">
+              <div className="px-4 rounded sm:hover:border sm:hover:shadow-md flex gap-1 pt-6 sm:pt-0 sm:hidden">
+                <Link className="dark:font-light" href={props.github} target="_blank">View Repo</Link>
+                <HiOutlineExternalLink className="h-4 w-4 pt-1" />
+              </div>
+              <p className="hidden 3xs:inline sm:hidden">|</p>
+              <div className="px-4 rounded sm:hover:border sm:hover:shadow-md flex gap-1 pt-2 3xs:pt-6 sm:pt-0">
+                <Link className="dark:font-light" href={props.site} target="_blank">View Site</Link>
+                <HiOutlineExternalLink className="h-4 w-4 pt-1" />
+              </div>
             </div>
-          </div>
 
-        </div>
+          </div>
         </motion.div>
       </Card>
 
