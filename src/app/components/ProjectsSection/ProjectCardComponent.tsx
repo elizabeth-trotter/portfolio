@@ -55,6 +55,8 @@ export default function ProjectCardComponent(props: ProjectCardProps) {
   }, [props.image, props.imageMobile]);
 
   useEffect(() => {
+    const threshold = window.innerWidth < 768 ? 0.25 : 0.75; // Adjust threshold based on screen width
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -65,7 +67,7 @@ export default function ProjectCardComponent(props: ProjectCardProps) {
           }
         });
       },
-      { threshold: 0.75 } // Adjust threshold as needed
+      { threshold: threshold }
     );
 
     const card = cardRef.current;
