@@ -38,10 +38,10 @@ export default function ProjectCardComponent(props: ProjectCardProps) {
 
   useEffect(() => {
     const handleResize = () => {
-      const newImgSrc = window.innerWidth < 480 ? props.imageMobile : props.image;
+      const newImgSrc = window.innerWidth <= 480 ? props.imageMobile : props.image;
       setImgSrc(newImgSrc);
 
-      const isMobile = window.innerWidth < 768;
+      const isMobile = window.innerWidth <= 1024;
       setHoveredCard(isMobile);
     };
 
@@ -50,8 +50,8 @@ export default function ProjectCardComponent(props: ProjectCardProps) {
   }, []);
 
   useEffect(() => {
-    if (window.innerWidth > 768) {
-      const threshold = window.innerWidth < 1024 ? 0.5 : 0.6;
+    if (window.innerWidth > 1024) {
+      // const threshold = window.innerWidth < 1024 ? 0.5 : 0.6;
 
       const observer = new IntersectionObserver(
         (entries) => {
@@ -63,7 +63,7 @@ export default function ProjectCardComponent(props: ProjectCardProps) {
             }
           });
         },
-        { threshold: threshold }
+        { threshold: 0.6 }
       );
 
       const card = cardRef.current;
