@@ -8,26 +8,16 @@ import Typewriter from 'typewriter-effect';
 import './DynamicText.css';
 
 const TypewriterComponent = () => {
-    // const [showCursor, setShowCursor] = useState(true);
 
-    // useEffect(() => {
-    //   // Hide cursor after 5 seconds
-    //   const timer = setTimeout(() => {
-    //     setShowCursor(false);
-    //   }, 5000);
-    //   return () => clearTimeout(timer);
-    // }, []);
-    
     return (
         <Typewriter
             options={{
                 wrapperClassName: 'typeWriterText',
-                cursorClassName: 'typeWriterCursor'
+                cursorClassName: 'typeWriterCursor',
+                delay: 95
             }}
             onInit={(typewriter) => {
                 typewriter.typeString('- a developer based in California.')
-                    .pauseFor(2500)
-                    // .deleteAll()
                     .start();
             }}
         />
