@@ -11,30 +11,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithubSquare } from "@fortawesome/free-brands-svg-icons";
 import { HiOutlineExternalLink } from "@/app/icons";
 
-// import CarouselComponent from "./CarouselComponent";
 export default function ProjectCardComponent(props: ProjectCardProps) {
   const [hoveredCard, setHoveredCard] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [imgSrc, setImgSrc] = useState<string>(props.image);
   const cardRef = useRef<HTMLDivElement>(null);
-
-  // const handleScroll = () => {
-  //   const card = cardRef.current;
-  //   if (card) {
-  //     console.log('card exists')
-  //     const { top, bottom } = card.getBoundingClientRect();
-  //     const isVisible = top >= 0 && bottom <= window.innerHeight;
-  //     setHoveredCard(isVisible);
-  //     console.log(hoveredCard)
-  //   }
-  // };
-
-  // const handleWheel = () => {
-  //   // If the card is hovered, ensure it stays hovered during scroll
-  //   if (hoveredCard) {
-  //     setHoveredCard(true);
-  //   }
-  // };
 
   useEffect(() => {
     const handleResize = () => {
@@ -51,8 +32,6 @@ export default function ProjectCardComponent(props: ProjectCardProps) {
 
   useEffect(() => {
     if (window.innerWidth > 1024) {
-      // const threshold = window.innerWidth < 1024 ? 0.5 : 0.6;
-
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
@@ -84,13 +63,6 @@ export default function ProjectCardComponent(props: ProjectCardProps) {
   return (
     <motion.div initial={{ scale: 0.90 }} whileInView={{ scale: 1 }} whileHover={{ scale: 1.05 }}
       className="flex flex-col items-center justify-center gap-2 3xl:gap-3 overflow-hidden"
-      // onMouseEnter={() => setHoveredCard(true)}
-      // onMouseLeave={() => setHoveredCard(false)}
-      // onTouchStart={() => setHoveredCard(true)}
-      // onTouchEnd={() => setHoveredCard(false)}
-      // onWheel={handleWheel}
-      // onWheel={handleScroll}
-      // onTouchMove={handleScroll}    
       ref={cardRef}
     >
       <Card theme={customCardTheme} className={`min-w-sm`} imgSrc={imgSrc}>

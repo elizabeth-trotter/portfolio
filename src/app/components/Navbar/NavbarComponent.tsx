@@ -31,28 +31,17 @@ export default function NavbarComponent(props: { isDarkMode: boolean }) {
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4 }}>
                 <Dropdown.Item as={Link} href="mailto:hello@elizabeth-trotter.com" ><span className="ps-[0.1rem]"><MdOutlineAlternateEmail /></span><span className="ps-4 pt-1">Email</span></Dropdown.Item>
               </motion.div>
-              {/* <Dropdown.Item as={Link} href="#" target='_blank'>Resume <FontAwesomeIcon icon={faCloudArrowDown} className='ps-2 pb-1 h-3' /></Dropdown.Item> */}
-              {/* <DropdownDivider /> */}
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4, delay: 0.15 }}>
                 <Dropdown.Item as={Link} href="https://github.com/elizabeth-trotter" target='_blank'><span className="ps-[0.1rem]"><BsGithub /></span><span className="ps-4 pt-1">GitHub</span></Dropdown.Item>
               </motion.div>
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4, delay: 0.3 }}>
                 <Dropdown.Item as={Link} href="https://www.linkedin.com/in/elizabeth-trotter" target='_blank'><span className="ps-[0.1rem]"><FaLinkedinIn /></span><span className="ps-4 pt-1">LinkedIn</span></Dropdown.Item>
               </motion.div>
-              {/* <Dropdown.Item as={Link} href="https://www.codewars.com/users/elizabeth-trotter" target='_blank'><span><SiCodewars /></span><span className="ps-4 pt-1">Codewars</span></Dropdown.Item> */}
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4, delay: 0.45 }}>
                 <Dropdown.Item as={Link} href="https://www.codewars.com/users/elizabeth-trotter" target='_blank'><span><Image src={props.isDarkMode ? CodewarsLight : CodewarsDark} alt={"Codewars logo"} className="h-4 w-4" /></span><span className="ps-[.85rem] pt-1">Codewars</span></Dropdown.Item>
               </motion.div>
             </Dropdown>
           </li>
-
-          {/* <Navbar.Link href="#contact">Contact</Navbar.Link> */}
-          {/* <Navbar.Link id="resume-link">
-            Resume{' '}
-            <span>
-              <FontAwesomeIcon icon={faCloudArrowDown} height={14} />
-            </span>
-          </Navbar.Link> */}
         </Navbar.Collapse>
         <DarkThemeToggle className="-mt-1" />
       </Navbar>
