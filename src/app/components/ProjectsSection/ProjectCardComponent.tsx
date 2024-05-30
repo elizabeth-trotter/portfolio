@@ -98,7 +98,7 @@ export default function ProjectCardComponent(props: ProjectCardProps) {
                 >
                   <Icon className={`${index < 3 ? '-mb-5' : ''} 3xs:mb-0 h-7 w-7 3xl:h-8 3xl:w-8 4xl:h-10 4xl:w-10 ${getTextLogoColor(props.iconNames[index])} dark:text-white`} />
                   {hoveredIndex === index && (
-                    <div className="absolute z-1 left-1/2 transform -translate-x-1/2 bottom-full bg-black text-white rounded-md p-2 pointer-events-none transition-opacity duration-300 whitespace-nowrap">
+                    <div className={`absolute z-1 ${window.innerWidth > 640 ? 'left-0' : 'left-1/2 transform -translate-x-1/2'} bottom-full bg-black text-white rounded-md p-2 pointer-events-none transition-opacity duration-300 whitespace-nowrap`}>
                       {props.iconNames[index]}
                     </div>
                   )}
