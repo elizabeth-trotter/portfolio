@@ -65,7 +65,12 @@ export default function ProjectCardComponent(props: ProjectCardProps) {
       className="flex flex-col items-center justify-center gap-2 3xl:gap-3 overflow-hidden"
       ref={cardRef}
     >
-      <Card theme={customCardTheme} className={`min-w-sm`} imgSrc={imgSrc}>
+      <Card theme={customCardTheme} className={`min-w-sm`}>
+        <Link href={props.site} target="_blank">
+          <div className="-mt-6 -mx-6">
+            <img src={imgSrc} alt="Preview of application site" className="rounded-t-lg w-full h-full object-cover" />
+          </div>
+        </Link>
         <div className="flex justify-between items-center">
           <p className="font-josefin-sans text-xl 3xl:text-2xl 4xl:text-3xl font-semibold text-gray-900 dark:text-white">
             {props.title}
