@@ -123,7 +123,7 @@ export default function Home() {
 
               <section id="projects" className="font-josefin-sans text-md text-gray-900 dark:text-white">
                 <div className="border-t mt-8 pb-16 border-gray-300 dark:border-gray-600"></div>
-                <h1 className="text-2xl 3xl:text-3xl 4xl:text-4xl font-josefin-sans pb-12">{".(Projects)"}</h1>
+                <h1 className="text-2xl 3xl:text-3xl 4xl:text-4xl font-josefin-sans pb-12">{"(Projects)"}</h1>
 
                 <div className="flex flex-col items-center w-full gap-16 xs:gap-11">
                   <PropTracComponent index={0} />

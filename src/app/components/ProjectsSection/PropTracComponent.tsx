@@ -12,7 +12,7 @@ function PropTracComponent(props: { index: number }) {
         iconNames={["C#", ".NET", "Azure", "TypeScript", "Next.js", "Tailwind CSS"]}
         image='./ProptracDesktop.jpg'
         imageMobile='./ProptracMobile.png'
-        description='Full-stack web application following the software development lifecycle. Leading backend, creating internal API with Model-View-Controller architecture, and managing relational database with Azure SQL Cloud. All-in-one tool for property managers.'
+        description='Full stack web application following the software development lifecycle. Leading backend, creating internal API with Model-View-Controller architecture, and managing relational database with Azure SQL Cloud. All-in-one tool for property managers.'
         github='https://github.com/elizabeth-trotter/PropTrac-backend'
         site='https://proptrac-app.vercel.app'
       />

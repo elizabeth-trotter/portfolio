@@ -75,7 +75,7 @@ export default function ProjectCardComponent(props: ProjectCardProps) {
             />
             <div className="absolute rounded-t-lg inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity duration-300">
               <span className="text-white">
-                View Site
+                View live project
               </span>
             </div>
           </div>
@@ -121,7 +121,7 @@ export default function ProjectCardComponent(props: ProjectCardProps) {
             </div>
             <div className="flex flex-col items-center 3xs:flex-row 3xs:items-baseline">
               <div className="px-4 rounded sm:hover:border sm:hover:shadow-md flex gap-1 pt-2 3xs:pt-6 sm:pt-0">
-                <Link className="font-semibold" href={props.github} target="_blank">Learn More</Link>
+                <Link className="font-semibold" href={props.github} target="_blank">Learn more</Link>
                 <HiOutlineExternalLink className="h-4 w-4 pt-1" />
               </div>
             </div>
