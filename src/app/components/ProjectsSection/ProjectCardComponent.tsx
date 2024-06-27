@@ -66,25 +66,34 @@ export default function ProjectCardComponent(props: ProjectCardProps) {
       ref={cardRef}
     >
       <Card theme={customCardTheme} className={`min-w-sm`}>
-        <Link href={props.site} target="_blank">
-          <div className="-mt-6 -mx-6">
-            <img src={imgSrc} alt="Preview of application site" className="rounded-t-lg w-full h-full object-cover" />
+        <Link href={props.site} target="_blank" className="block -mt-6 -mx-6">
+          <div className="relative">
+            <img
+              src={imgSrc}
+              alt="Preview of application site"
+              className="rounded-t-lg w-full h-full object-cover transition-transform duration-300 transform hover:scale-105"
+            />
+            <div className="absolute rounded-t-lg inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity duration-300">
+              <span className="text-white">
+                View Site
+              </span>
+            </div>
           </div>
         </Link>
         <div className="flex justify-between items-center">
           <p className="font-josefin-sans text-xl 3xl:text-2xl 4xl:text-3xl font-semibold text-gray-900 dark:text-white">
             {props.title}
           </p>
-          <Link href={props.github} target='_blank' aria-label="GitHub Icon Link" className="hidden 2xs:inline">
+          {/* <Link href={props.github} target='_blank' aria-label="GitHub Icon Link" className="hidden 2xs:inline">
             <FontAwesomeIcon icon={faGithubSquare} className='text-black dark:text-slate-400 pt-2 sm:pt-0 text-3xl 3xl:text-4xl 4xl:text-5xl hover:text-slate-600 dark:hover:text-slate-300' />
-          </Link>
+          </Link> */}
         </div>
         <motion.div
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: hoveredCard ? 1 : 0, height: hoveredCard ? "auto" : 0 }}
           transition={{ duration: 0.3 }}
         >
-          <p className="text-balance 3xl:text-lg 4xl:text-xl font-normal text-gray-700 dark:text-gray-400">
+          <p className="3xl:text-lg 4xl:text-xl font-normal text-gray-700 dark:text-gray-400">
             {props.description}
           </p>
           <p className="py-3 font-semibold dark:font-medium 3xl:text-lg 4xl:text-xl">Built with:</p>
@@ -111,13 +120,8 @@ export default function ProjectCardComponent(props: ProjectCardProps) {
               ))}
             </div>
             <div className="flex flex-col items-center 3xs:flex-row 3xs:items-baseline">
-              <div className="px-4 rounded sm:hover:border sm:hover:shadow-md flex gap-1 pt-6 sm:pt-0 sm:hidden">
-                <Link className="dark:font-light" href={props.github} target="_blank">View Repo</Link>
-                <HiOutlineExternalLink className="h-4 w-4 pt-1" />
-              </div>
-              <p className="hidden 3xs:inline sm:hidden">|</p>
               <div className="px-4 rounded sm:hover:border sm:hover:shadow-md flex gap-1 pt-2 3xs:pt-6 sm:pt-0">
-                <Link className="dark:font-light" href={props.site} target="_blank">View Site</Link>
+                <Link className="font-semibold" href={props.github} target="_blank">Learn More</Link>
                 <HiOutlineExternalLink className="h-4 w-4 pt-1" />
               </div>
             </div>
