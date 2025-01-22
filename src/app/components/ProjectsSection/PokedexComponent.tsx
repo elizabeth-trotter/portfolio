@@ -14,7 +14,7 @@ function PokedexComponent(props: { index: number }) {
         imageMobile='./PokedexMobile.png'
         description='Navigated extensive dataset from PokéAPI to create a fully responsive Pokédex application. Employed vanilla JavaScript for DOM manipulation. Key features include random Pokémon retrieval, search, and favorite functionality.'
         github='https://github.com/elizabeth-trotter/pokemonapi'
-        site='https://pokedexproject.azurewebsites.net'
+        site='https://espokedex.vercel.app/'
       />
     </div>
   )
